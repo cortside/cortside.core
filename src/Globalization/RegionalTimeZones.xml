@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<root>
+    <DaylightTimeRules>
+	<DaylightTimeRule name="United States"> 
+	    <rule name="initial rule" endDate="12/31/2006" startWeekOfMonth= "First" startDayOfWeek="Sunday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	    <rule name="2007 new law" startDate="1/1/2007" startWeekOfMonth= "Second" startDayOfWeek="Sunday" startMonth="3" endWeekOfMonth="First" endDayOfWeek="Sunday" endMonth="11" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	</DaylightTimeRule>
+	<DaylightTimeRule name="Test"> 
+	    <rule name="initial rule" startDate="1/1/1900" endDate="12/31/1900" startWeekOfMonth= "First" startDayOfWeek="Sunday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	    <rule name="initial rule" startDate="1/1/1901" endDate="12/31/1901" startWeekOfMonth= "Second" startDayOfWeek="Monday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="90" />
+	    <rule name="initial rule" startDate="1/1/1902" endDate="12/31/1902" startWeekOfMonth= "Third" startDayOfWeek="Tuesday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="120" />
+	    <rule name="initial rule" startDate="1/1/1903" endDate="12/31/1903" startWeekOfMonth= "Fourth" startDayOfWeek="Wednesday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="180" />
+	    <rule name="initial rule" startDate="1/1/1904" endDate="12/31/1904" startWeekOfMonth= "Fifth" startDayOfWeek="Thursday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="240" />
+	    <rule name="initial rule" startDate="1/1/1905" endDate="12/31/1905" startWeekOfMonth= "Last" startDayOfWeek="Friday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="300" />
+	    <rule name="initial rule" startDate="1/1/1906" endDate="12/31/2006" startWeekOfMonth= "First" startDayOfWeek="Saturday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="360" />
+	    <rule name="2007 new law" startDate="1/1/2007" startWeekOfMonth= "Second" startDayOfWeek="Sunday" startMonth="3" endWeekOfMonth="First" endDayOfWeek="Sunday" endMonth="11" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	</DaylightTimeRule>
+	<!--
+	Before 1979, DST was observed in Iran. Thereafter it was abandoned
+	until 1989, when it started on the first day of Farvardin (21-22 March)
+	in the Iranian calendar and ended on the first day of Mehr (23-24 September). 
+	In 2006, Iran stopped observing DST.
+	
+	// TODO: need to be able to specify a specific day
+	// TODO: need to be able to specify a rule that has not DST
+	-->
+	<DaylightTimeRule name="Iran"> 
+	    <rule name="before 1979" endDate="12/31/1979" startWeekOfMonth= "First" startDayOfWeek="Sunday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	    <rule name="no DST" startDate="1/1/1980" endDate="12/31/1988" startWeekOfMonth= "Second" startDayOfWeek="Sunday" startMonth="3" endWeekOfMonth="First" endDayOfWeek="Sunday" endMonth="11" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	    <rule name="DST again" startDate="1/1/1989" endDate="12/31/2005" startWeekOfMonth= "First" startDayOfWeek="Sunday" startMonth="4" endWeekOfMonth="Last" endDayOfWeek="Sunday" endMonth="10" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	    <rule name="no DST again" startDate="1/1/2006" startWeekOfMonth= "Second" startDayOfWeek="Sunday" startMonth="3" endWeekOfMonth="First" endDayOfWeek="Sunday" endMonth="11" hourOfDay="2" utcHourOfDay="False" delta="60" />
+	</DaylightTimeRule>
+    </DaylightTimeRules>
+    <RegionTimeZones>
+	<RegionalTimeZone>
+	</RegionalTimeZone>
+    </RegionTimeZones>
+</root>
