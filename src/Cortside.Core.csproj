@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80B94045-4DE6-4BB0-BE22-C5CC0E772695}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Spring2.Core</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Spring2.Core</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>false</SignAssembly>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\build\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\build\Release\Core\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
+    <OutputPath>..\build\Core\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
+    <DocumentationFile>Spring2.Core.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591,1699,0618</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyVersionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessEntity\BusinessEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessEntity\IBusinessEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\BaseEntityDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\ColumnMetaData.cs" />
+    <Compile Include="DAO\DaoException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\DaoTransaction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\DatabaseFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\DbConnectionScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\DefaultConnectionStringStrategy.cs" />
+    <Compile Include="DAO\EntityDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\EqualityOperatorEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\FinderException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\IConnectionStringStrategy.cs" />
+    <Compile Include="DAO\IDatabaseExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\IOrderBy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\IWhere.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\LogicalOperatorEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\OrderByClause.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlBetweenPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlDaoTransaction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlEntityDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlEqualityPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlInPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlLiteralPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlParameterList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlPredicate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\SqlUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAO\WhereClause.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\DaylightTimeRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\IDaylightTimeRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\RegionalTimeZone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\WeekOfMonth.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globalization\XmlDaylightTimeRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IoC\ClassRegistry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\IMessageFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\InvalidTypeFormatError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\MessageList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\MessageListException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\MissingRequiredFieldError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\ResourceKey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\SimpleFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message\TestMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\ApplicationError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\ApplicationErrorCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\DateUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\ExceptionError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\MissingRequiredFieldError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Options.cs" />
+    <Compile Include="Util\PagedList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\ParseError.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Range.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\StringExtensions.cs" />
+    <Compile Include="Util\StringUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Util\Timer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ValueDataObject\DataObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Globalization\RegionalTimeZones.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
