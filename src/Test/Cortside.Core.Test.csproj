@@ -4,12 +4,12 @@
     <ProductVersion>9.0.30729</ProductVersion>
     <ApplicationIcon />
     <AssemblyKeyContainerName />
-    <AssemblyName>Spring2.Core.Test</AssemblyName>
+    <AssemblyName>Cortside.Core.Test</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <RootNamespace>Spring2.Core</RootNamespace>
+    <RootNamespace>Cortside.Core.Test</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject />
     <FileUpgradeFlags />

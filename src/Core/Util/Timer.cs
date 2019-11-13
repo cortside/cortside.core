@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.Util {
+namespace Cortside.Core.Util {
     /// <summary>
     /// Util class to aide in performance timings.  Internally maintains time in ticks.  Start and Stop properties are expressed as ticks.
     /// </summary>

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     /// <summary>
     /// Summary description for SqlParameterCollection.
     /// </summary>

@@ -2,7 +2,7 @@ using System.IO;
 
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
     /// <summary>
     /// Utilities to help in the testing process.
     /// </summary>

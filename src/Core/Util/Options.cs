@@ -142,7 +142,7 @@ using System.Linq;
 using NDesk.Options;
 #endif
 
-namespace Spring2.Core.Util {
+namespace Cortside.Core.Util {
 
     public class OptionValueCollection : IList, IList<string> {
 

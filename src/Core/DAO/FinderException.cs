@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     /// <summary>
     /// Exception created when a finder returns no rows.

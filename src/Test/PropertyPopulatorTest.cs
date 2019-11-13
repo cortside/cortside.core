@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Specialized;
-using Spring2.Core.Message;
-using Spring2.Core.PropertyPopulator;
-using Spring2.Core.Types;
+using Cortside.Core.Message;
+using Cortside.Core.PropertyPopulator;
+using Cortside.Core.Types;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     public class PropertyPopulatorTest {
 
@@ -27,27 +27,27 @@ namespace Spring2.Core.Test {
             collection.Add("systemChar", "a");
             collection.Add("systemFloat", "1");
             collection.Add("systemDouble", "1");
-            collection.Add("spring2BooleanType", "Y");
-            collection.Add("spring2CurrencyType", "1.01");
-            collection.Add("spring2CurrencyTypeList", "1.01,2.02");
-            collection.Add("spring2DateTimeType", "1/1/2005 1:01");
-            collection.Add("spring2DateType", "1/1/2005");
-            collection.Add("spring2DateTypeList", "1/1/2005,2/2/2005");
-            collection.Add("spring2DecimalType", "1.1");
-            collection.Add("spring2DecimalTypeList", "1.1,2.2");
-            collection.Add("spring2GenderType", "M");
-            collection.Add("spring2IdType", "1");
-            collection.Add("spring2IdTypeList", "1,2");
-            collection.Add("spring2IntegerType", "1");
-            collection.Add("spring2IntegerTypeList", "1,2");
-            collection.Add("spring2LongType", "1");
-            collection.Add("spring2PhoneNumberType", "(801)555-6666");
-            collection.Add("spring2QuantityType", "1");
-            collection.Add("spring2ShortType", "1");
-            collection.Add("spring2StringType", "value2");
-            collection.Add("spring2StringTypeList", "value2,value3");
-            collection.Add("spring2TimeType", "11:11");
-            collection.Add("spring2LanguageEnum", LanguageEnum.VIETNAMESE.Code);
+            collection.Add("valueBooleanType", "Y");
+            collection.Add("valueCurrencyType", "1.01");
+            collection.Add("valueCurrencyTypeList", "1.01,2.02");
+            collection.Add("valueDateTimeType", "1/1/2005 1:01");
+            collection.Add("valueDateType", "1/1/2005");
+            collection.Add("valueDateTypeList", "1/1/2005,2/2/2005");
+            collection.Add("valueDecimalType", "1.1");
+            collection.Add("valueDecimalTypeList", "1.1,2.2");
+            collection.Add("valueGenderType", "M");
+            collection.Add("valueIdType", "1");
+            collection.Add("valueIdTypeList", "1,2");
+            collection.Add("valueIntegerType", "1");
+            collection.Add("valueIntegerTypeList", "1,2");
+            collection.Add("valueLongType", "1");
+            collection.Add("valuePhoneNumberType", "(801)555-6666");
+            collection.Add("valueQuantityType", "1");
+            collection.Add("valueShortType", "1");
+            collection.Add("valueStringType", "value2");
+            collection.Add("valueStringTypeList", "value2,value3");
+            collection.Add("valueTimeType", "11:11");
+            collection.Add("valueLanguageEnum", LanguageEnum.VIETNAMESE.Code);
 
             //run populator
             SampleDataForm data = new SampleDataForm();
@@ -68,39 +68,39 @@ namespace Spring2.Core.Test {
             Assert.Equal('a', data.SystemChar);
             Assert.Equal(1, data.SystemFloat);
             Assert.Equal(1, data.SystemDouble);
-            Assert.Equal(BooleanType.TRUE, data.Spring2BooleanType);
-            Assert.Equal(new CurrencyType(1.01), data.Spring2CurrencyType);
-            Assert.Equal(2, data.Spring2CurrencyTypeList.Count);
-            Assert.True(data.Spring2CurrencyTypeList.Contains(new CurrencyType(1.01)));
-            Assert.True(data.Spring2CurrencyTypeList.Contains(new CurrencyType(2.02)));
-            Assert.Equal(new DateTimeType(2005, 1, 1, 1, 1, 0), data.Spring2DateTimeType);
-            Assert.Equal(new DateType(2005, 1, 1), data.Spring2DateType);
-            Assert.Equal(2, data.Spring2DateTypeList.Count);
-            Assert.True(data.Spring2DateTypeList.Contains(new DateType(2005, 1, 1)));
-            Assert.True(data.Spring2DateTypeList.Contains(new DateType(2005, 2, 2)));
-            Assert.Equal(new DecimalType(1.1), data.Spring2DecimalType);
-            Assert.Equal(2, data.Spring2DecimalTypeList.Count);
-            Assert.True(data.Spring2DecimalTypeList.Contains(new DecimalType(1.1)));
-            Assert.True(data.Spring2DecimalTypeList.Contains(new DecimalType(1.1)));
-            Assert.Equal(GenderType.MALE, data.Spring2GenderType);
-            Assert.Equal(new IdType(1), data.Spring2IdType);
-            Assert.Equal(2, data.Spring2IdTypeList.Count);
-            Assert.True(data.Spring2IdTypeList.Contains(new IdType(1)));
-            Assert.True(data.Spring2IdTypeList.Contains(new IdType(2)));
-            Assert.Equal(new IntegerType(1), data.Spring2IntegerType);
-            Assert.Equal(2, data.Spring2IntegerTypeList.Count);
-            Assert.True(data.Spring2IntegerTypeList.Contains(new IntegerType(1)));
-            Assert.True(data.Spring2IntegerTypeList.Contains(new IntegerType(2)));
-            Assert.Equal(new LongType(1), data.Spring2LongType);
-            Assert.Equal(new PhoneNumberType("801", "555", "6666", String.Empty), data.Spring2PhoneNumberType);
-            Assert.Equal(new QuantityType(1), data.Spring2QuantityType);
-            Assert.Equal(new ShortType(1), data.Spring2ShortType);
-            Assert.Equal(new StringType("value2"), data.Spring2StringType);
-            Assert.Equal(2, data.Spring2StringTypeList.Count);
-            Assert.True(data.Spring2StringTypeList.Contains(new StringType("value2")));
-            Assert.True(data.Spring2StringTypeList.Contains(new StringType("value3")));
-            Assert.Equal(new TimeType(11, 11, 0), data.Spring2TimeType);
-            Assert.Equal(LanguageEnum.VIETNAMESE, data.Spring2LanguageEnum);
+            Assert.Equal(BooleanType.TRUE, data.ValueBooleanType);
+            Assert.Equal(new CurrencyType(1.01), data.ValueCurrencyType);
+            Assert.Equal(2, data.ValueCurrencyTypeList.Count);
+            Assert.True(data.ValueCurrencyTypeList.Contains(new CurrencyType(1.01)));
+            Assert.True(data.ValueCurrencyTypeList.Contains(new CurrencyType(2.02)));
+            Assert.Equal(new DateTimeType(2005, 1, 1, 1, 1, 0), data.ValueDateTimeType);
+            Assert.Equal(new DateType(2005, 1, 1), data.ValueDateType);
+            Assert.Equal(2, data.ValueDateTypeList.Count);
+            Assert.True(data.ValueDateTypeList.Contains(new DateType(2005, 1, 1)));
+            Assert.True(data.ValueDateTypeList.Contains(new DateType(2005, 2, 2)));
+            Assert.Equal(new DecimalType(1.1), data.ValueDecimalType);
+            Assert.Equal(2, data.ValueDecimalTypeList.Count);
+            Assert.True(data.ValueDecimalTypeList.Contains(new DecimalType(1.1)));
+            Assert.True(data.ValueDecimalTypeList.Contains(new DecimalType(1.1)));
+            Assert.Equal(GenderType.MALE, data.ValueGenderType);
+            Assert.Equal(new IdType(1), data.ValueIdType);
+            Assert.Equal(2, data.ValueIdTypeList.Count);
+            Assert.True(data.ValueIdTypeList.Contains(new IdType(1)));
+            Assert.True(data.ValueIdTypeList.Contains(new IdType(2)));
+            Assert.Equal(new IntegerType(1), data.ValueIntegerType);
+            Assert.Equal(2, data.ValueIntegerTypeList.Count);
+            Assert.True(data.ValueIntegerTypeList.Contains(new IntegerType(1)));
+            Assert.True(data.ValueIntegerTypeList.Contains(new IntegerType(2)));
+            Assert.Equal(new LongType(1), data.ValueLongType);
+            Assert.Equal(new PhoneNumberType("801", "555", "6666", String.Empty), data.ValuePhoneNumberType);
+            Assert.Equal(new QuantityType(1), data.ValueQuantityType);
+            Assert.Equal(new ShortType(1), data.ValueShortType);
+            Assert.Equal(new StringType("value2"), data.ValueStringType);
+            Assert.Equal(2, data.ValueStringTypeList.Count);
+            Assert.True(data.ValueStringTypeList.Contains(new StringType("value2")));
+            Assert.True(data.ValueStringTypeList.Contains(new StringType("value3")));
+            Assert.Equal(new TimeType(11, 11, 0), data.ValueTimeType);
+            Assert.Equal(LanguageEnum.VIETNAMESE, data.ValueLanguageEnum);
         }
 
         [Fact]
@@ -108,7 +108,7 @@ namespace Spring2.Core.Test {
             //set up NameValueCollection
             NameValueCollection collection = new NameValueCollection();
             collection.Add("systemString", "value1");
-            collection.Add("spring2LanguageEnum", LanguageEnum.VIETNAMESE.Code);
+            collection.Add("valueLanguageEnum", LanguageEnum.VIETNAMESE.Code);
 
             //run populator
             SampleDataForm data = new SampleDataForm();
@@ -116,7 +116,7 @@ namespace Spring2.Core.Test {
 
             //assert object was populated
             Assert.Equal("value1", data.SystemString);
-            Assert.Equal(LanguageEnum.VIETNAMESE, data.Spring2LanguageEnum);
+            Assert.Equal(LanguageEnum.VIETNAMESE, data.ValueLanguageEnum);
         }
 
         [Fact]
@@ -133,8 +133,8 @@ namespace Spring2.Core.Test {
             String prefix = "prefix";
             NameValueCollection collection = new NameValueCollection();
             collection.Add(prefix + "systemString", "value1");
-            collection.Add(prefix + "spring2StringType", "value2");
-            collection.Add("spring2IdType", "1");
+            collection.Add(prefix + "valueStringType", "value2");
+            collection.Add("valueIdType", "1");
 
             //run populator
             SampleDataForm data = new SampleDataForm();
@@ -142,15 +142,15 @@ namespace Spring2.Core.Test {
 
             //assert object was populated correctly
             Assert.Equal("value1", data.SystemString);
-            Assert.Equal(new StringType("value2"), data.Spring2StringType);
-            Assert.True(data.Spring2IdType.IsDefault);
+            Assert.Equal(new StringType("value2"), data.ValueStringType);
+            Assert.True(data.ValueIdType.IsDefault);
         }
 
         [Fact]
         public void ShouldGetMessageListWhenParseException() {
             //set up NameValueCollection
             NameValueCollection collection = new NameValueCollection();
-            collection.Add("spring2IdType", "value1");
+            collection.Add("valueIdType", "value1");
 
             //run populator
             SampleDataForm data = new SampleDataForm();
@@ -183,9 +183,9 @@ namespace Spring2.Core.Test {
             NameValueCollection collection = new NameValueCollection();
             collection.Add("systemString", "value1");
             collection.Add("systemInt", "1");
-            collection.Add("spring2IntegerType", "1");
-            collection.Add("spring2StringType", "value2");
-            collection.Add("spring2LanguageEnum", LanguageEnum.VIETNAMESE.Code);
+            collection.Add("valueIntegerType", "1");
+            collection.Add("valueStringType", "value2");
+            collection.Add("valueLanguageEnum", LanguageEnum.VIETNAMESE.Code);
 
             //run populator
             SampleClassWithRequiredField data = new SampleClassWithRequiredField();
@@ -194,9 +194,9 @@ namespace Spring2.Core.Test {
             Assert.True(errors.Count.Equals(0));
             Assert.Equal("value1", data.SystemString);
             Assert.Equal(1, data.SystemInt);
-            Assert.Equal(new IntegerType(1), data.Spring2IntegerType);
-            Assert.Equal(new StringType("value2"), data.Spring2StringType);
-            Assert.Equal(LanguageEnum.VIETNAMESE, data.Spring2LanguageEnum);
+            Assert.Equal(new IntegerType(1), data.ValueIntegerType);
+            Assert.Equal(new StringType("value2"), data.ValueStringType);
+            Assert.Equal(LanguageEnum.VIETNAMESE, data.ValueLanguageEnum);
         }
 
         //if the value is an empty string and is not required then no problem
@@ -206,9 +206,9 @@ namespace Spring2.Core.Test {
             NameValueCollection collection = new NameValueCollection();
             collection.Add("systemString", "value1");
             collection.Add("systemInt", "1");
-            collection.Add("spring2IntegerType", "1");
-            collection.Add("spring2StringType", "");
-            collection.Add("spring2LanguageEnum", LanguageEnum.VIETNAMESE.Code);
+            collection.Add("valueIntegerType", "1");
+            collection.Add("valueStringType", "");
+            collection.Add("valueLanguageEnum", LanguageEnum.VIETNAMESE.Code);
 
             //run populator
             SampleClassWithRequiredField data = new SampleClassWithRequiredField();
@@ -217,9 +217,9 @@ namespace Spring2.Core.Test {
             Assert.True(errors.Count.Equals(0));
             Assert.Equal("value1", data.SystemString);
             Assert.Equal(1, data.SystemInt);
-            Assert.Equal(new IntegerType(1), data.Spring2IntegerType);
-            Assert.Equal(new StringType(""), data.Spring2StringType);
-            Assert.Equal(LanguageEnum.VIETNAMESE, data.Spring2LanguageEnum);
+            Assert.Equal(new IntegerType(1), data.ValueIntegerType);
+            Assert.Equal(new StringType(""), data.ValueStringType);
+            Assert.Equal(LanguageEnum.VIETNAMESE, data.ValueLanguageEnum);
         }
 
         [Fact]
@@ -228,9 +228,9 @@ namespace Spring2.Core.Test {
             NameValueCollection collection = new NameValueCollection();
             collection.Add("systemString", "");
             collection.Add("systemInt", "1");
-            collection.Add("spring2IntegerType", "1");
-            collection.Add("spring2StringType", "value2");
-            collection.Add("spring2LanguageEnum", LanguageEnum.VIETNAMESE.Code);
+            collection.Add("valueIntegerType", "1");
+            collection.Add("valueStringType", "value2");
+            collection.Add("valueLanguageEnum", LanguageEnum.VIETNAMESE.Code);
 
             //run populator
             SampleClassWithRequiredField data = new SampleClassWithRequiredField();
@@ -239,9 +239,9 @@ namespace Spring2.Core.Test {
             Assert.True(errors.Count.Equals(0));
             Assert.Equal("", data.SystemString);
             Assert.Equal(1, data.SystemInt);
-            Assert.Equal(new IntegerType(1), data.Spring2IntegerType);
-            Assert.Equal(new StringType("value2"), data.Spring2StringType);
-            Assert.Equal(LanguageEnum.VIETNAMESE, data.Spring2LanguageEnum);
+            Assert.Equal(new IntegerType(1), data.ValueIntegerType);
+            Assert.Equal(new StringType("value2"), data.ValueStringType);
+            Assert.Equal(LanguageEnum.VIETNAMESE, data.ValueLanguageEnum);
         }
 
         [Fact]
@@ -250,9 +250,9 @@ namespace Spring2.Core.Test {
             NameValueCollection collection = new NameValueCollection();
             collection.Add("systemString", "value1");
             collection.Add("systemInt", "1");
-            collection.Add("spring2IntegerType", "ONE");
-            collection.Add("spring2StringType", "value2");
-            collection.Add("spring2LanguageEnum", LanguageEnum.VIETNAMESE.Code);
+            collection.Add("valueIntegerType", "ONE");
+            collection.Add("valueStringType", "value2");
+            collection.Add("valueLanguageEnum", LanguageEnum.VIETNAMESE.Code);
 
             //run populator
             SampleClassWithRequiredField data = new SampleClassWithRequiredField();
@@ -262,9 +262,9 @@ namespace Spring2.Core.Test {
             Assert.Equal("MissingRequiredFieldError", errors[0].GetType().Name);
             Assert.Equal("value1", data.SystemString);
             Assert.Equal(1, data.SystemInt);
-            Assert.True(data.Spring2IntegerType.IsDefault);
-            Assert.Equal(new StringType("value2"), data.Spring2StringType);
-            Assert.Equal(LanguageEnum.VIETNAMESE, data.Spring2LanguageEnum);
+            Assert.True(data.ValueIntegerType.IsDefault);
+            Assert.Equal(new StringType("value2"), data.ValueStringType);
+            Assert.Equal(LanguageEnum.VIETNAMESE, data.ValueLanguageEnum);
         }
 
         [Fact]
@@ -291,27 +291,27 @@ namespace Spring2.Core.Test {
             private char systemChar;
             private float systemFloat;
             private double systemDouble;
-            private BooleanType spring2BooleanType;
-            private CurrencyType spring2CurrencyType;
-            private CurrencyTypeList spring2CurrencyTypeList;
-            private DateTimeType spring2DateTimeType;
-            private DateType spring2DateType;
-            private DateTypeList spring2DateTypeList;
-            private DecimalType spring2DecimalType;
-            private DecimalTypeList spring2DecimalTypeList;
-            private GenderType spring2GenderType;
-            private IdType spring2IdType;
-            private IdTypeList spring2IdTypeList;
-            private IntegerType spring2IntegerType;
-            private IntegerTypeList spring2IntegerTypeList;
-            private LongType spring2LongType;
-            private PhoneNumberType spring2PhoneNumberType;
-            private QuantityType spring2QuantityType;
-            private ShortType spring2ShortType;
-            private StringType spring2StringType;
-            private StringTypeList spring2StringTypeList;
-            private TimeType spring2TimeType;
-            private LanguageEnum spring2LanguageEnum;
+            private BooleanType valueBooleanType;
+            private CurrencyType valueCurrencyType;
+            private CurrencyTypeList valueCurrencyTypeList;
+            private DateTimeType valueDateTimeType;
+            private DateType valueDateType;
+            private DateTypeList valueDateTypeList;
+            private DecimalType valueDecimalType;
+            private DecimalTypeList valueDecimalTypeList;
+            private GenderType valueGenderType;
+            private IdType valueIdType;
+            private IdTypeList valueIdTypeList;
+            private IntegerType valueIntegerType;
+            private IntegerTypeList valueIntegerTypeList;
+            private LongType valueLongType;
+            private PhoneNumberType valuePhoneNumberType;
+            private QuantityType valueQuantityType;
+            private ShortType valueShortType;
+            private StringType valueStringType;
+            private StringTypeList valueStringTypeList;
+            private TimeType valueTimeType;
+            private LanguageEnum valueLanguageEnum;
 
             public string SystemString {
                 get { return systemString; }
@@ -369,89 +369,89 @@ namespace Spring2.Core.Test {
                 get { return systemDouble; }
                 set { systemDouble = value; }
             }
-            public BooleanType Spring2BooleanType {
-                get { return spring2BooleanType; }
-                set { spring2BooleanType = value; }
+            public BooleanType ValueBooleanType {
+                get { return valueBooleanType; }
+                set { valueBooleanType = value; }
             }
-            public CurrencyType Spring2CurrencyType {
-                get { return spring2CurrencyType; }
-                set { spring2CurrencyType = value; }
+            public CurrencyType ValueCurrencyType {
+                get { return valueCurrencyType; }
+                set { valueCurrencyType = value; }
             }
-            public CurrencyTypeList Spring2CurrencyTypeList {
-                get { return spring2CurrencyTypeList; }
-                set { spring2CurrencyTypeList = value; }
+            public CurrencyTypeList ValueCurrencyTypeList {
+                get { return valueCurrencyTypeList; }
+                set { valueCurrencyTypeList = value; }
             }
-            public DateTimeType Spring2DateTimeType {
-                get { return spring2DateTimeType; }
-                set { spring2DateTimeType = value; }
+            public DateTimeType ValueDateTimeType {
+                get { return valueDateTimeType; }
+                set { valueDateTimeType = value; }
             }
-            public DateType Spring2DateType {
-                get { return spring2DateType; }
-                set { spring2DateType = value; }
+            public DateType ValueDateType {
+                get { return valueDateType; }
+                set { valueDateType = value; }
             }
-            public DateTypeList Spring2DateTypeList {
-                get { return spring2DateTypeList; }
-                set { spring2DateTypeList = value; }
+            public DateTypeList ValueDateTypeList {
+                get { return valueDateTypeList; }
+                set { valueDateTypeList = value; }
             }
-            public DecimalType Spring2DecimalType {
-                get { return spring2DecimalType; }
-                set { spring2DecimalType = value; }
+            public DecimalType ValueDecimalType {
+                get { return valueDecimalType; }
+                set { valueDecimalType = value; }
             }
-            public DecimalTypeList Spring2DecimalTypeList {
-                get { return spring2DecimalTypeList; }
-                set { spring2DecimalTypeList = value; }
+            public DecimalTypeList ValueDecimalTypeList {
+                get { return valueDecimalTypeList; }
+                set { valueDecimalTypeList = value; }
             }
-            public GenderType Spring2GenderType {
-                get { return spring2GenderType; }
-                set { spring2GenderType = value; }
+            public GenderType ValueGenderType {
+                get { return valueGenderType; }
+                set { valueGenderType = value; }
             }
-            public IdType Spring2IdType {
-                get { return spring2IdType; }
-                set { spring2IdType = value; }
+            public IdType ValueIdType {
+                get { return valueIdType; }
+                set { valueIdType = value; }
             }
-            public IdTypeList Spring2IdTypeList {
-                get { return spring2IdTypeList; }
-                set { spring2IdTypeList = value; }
+            public IdTypeList ValueIdTypeList {
+                get { return valueIdTypeList; }
+                set { valueIdTypeList = value; }
             }
-            public IntegerType Spring2IntegerType {
-                get { return spring2IntegerType; }
-                set { spring2IntegerType = value; }
+            public IntegerType ValueIntegerType {
+                get { return valueIntegerType; }
+                set { valueIntegerType = value; }
             }
-            public IntegerTypeList Spring2IntegerTypeList {
-                get { return spring2IntegerTypeList; }
-                set { spring2IntegerTypeList = value; }
+            public IntegerTypeList ValueIntegerTypeList {
+                get { return valueIntegerTypeList; }
+                set { valueIntegerTypeList = value; }
             }
-            public LongType Spring2LongType {
-                get { return spring2LongType; }
-                set { spring2LongType = value; }
+            public LongType ValueLongType {
+                get { return valueLongType; }
+                set { valueLongType = value; }
             }
-            public PhoneNumberType Spring2PhoneNumberType {
-                get { return spring2PhoneNumberType; }
-                set { spring2PhoneNumberType = value; }
+            public PhoneNumberType ValuePhoneNumberType {
+                get { return valuePhoneNumberType; }
+                set { valuePhoneNumberType = value; }
             }
-            public QuantityType Spring2QuantityType {
-                get { return spring2QuantityType; }
-                set { spring2QuantityType = value; }
+            public QuantityType ValueQuantityType {
+                get { return valueQuantityType; }
+                set { valueQuantityType = value; }
             }
-            public ShortType Spring2ShortType {
-                get { return spring2ShortType; }
-                set { spring2ShortType = value; }
+            public ShortType ValueShortType {
+                get { return valueShortType; }
+                set { valueShortType = value; }
             }
-            public StringType Spring2StringType {
-                get { return spring2StringType; }
-                set { spring2StringType = value; }
+            public StringType ValueStringType {
+                get { return valueStringType; }
+                set { valueStringType = value; }
             }
-            public StringTypeList Spring2StringTypeList {
-                get { return spring2StringTypeList; }
-                set { spring2StringTypeList = value; }
+            public StringTypeList ValueStringTypeList {
+                get { return valueStringTypeList; }
+                set { valueStringTypeList = value; }
             }
-            public TimeType Spring2TimeType {
-                get { return spring2TimeType; }
-                set { spring2TimeType = value; }
+            public TimeType ValueTimeType {
+                get { return valueTimeType; }
+                set { valueTimeType = value; }
             }
-            public LanguageEnum Spring2LanguageEnum {
-                get { return spring2LanguageEnum; }
-                set { spring2LanguageEnum = value; }
+            public LanguageEnum ValueLanguageEnum {
+                get { return valueLanguageEnum; }
+                set { valueLanguageEnum = value; }
             }
 
             public String ReadOnlySystemString {
@@ -463,9 +463,9 @@ namespace Spring2.Core.Test {
         public class SampleClassWithRequiredField {
             private string systemString;
             private int systemInt;
-            private IntegerType spring2IntegerType;
-            private StringType spring2StringType;
-            private LanguageEnum spring2LanguageEnum;
+            private IntegerType valueIntegerType;
+            private StringType valueStringType;
+            private LanguageEnum valueLanguageEnum;
 
             [Required]
             public string SystemString {
@@ -478,19 +478,19 @@ namespace Spring2.Core.Test {
                 set { systemInt = value; }
             }
             [Required]
-            public IntegerType Spring2IntegerType {
-                get { return spring2IntegerType; }
-                set { spring2IntegerType = value; }
+            public IntegerType ValueIntegerType {
+                get { return valueIntegerType; }
+                set { valueIntegerType = value; }
             }
             [Required]
-            public StringType Spring2StringType {
-                get { return spring2StringType; }
-                set { spring2StringType = value; }
+            public StringType ValueStringType {
+                get { return valueStringType; }
+                set { valueStringType = value; }
             }
             [Required]
-            public LanguageEnum Spring2LanguageEnum {
-                get { return spring2LanguageEnum; }
-                set { spring2LanguageEnum = value; }
+            public LanguageEnum ValueLanguageEnum {
+                get { return valueLanguageEnum; }
+                set { valueLanguageEnum = value; }
             }
         }
     }

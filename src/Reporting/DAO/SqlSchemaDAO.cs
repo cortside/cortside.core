@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Spring2.Core.DAO;
-using Spring2.Core.Types;
+using Cortside.Core.DAO;
+using Cortside.Core.Types;
 
-namespace Spring2.Core.Reporting {
-    public class SqlSchemaDAO : Spring2.Core.DAO.SqlEntityDAO {
+namespace Cortside.Core.Reporting {
+    public class SqlSchemaDAO : Cortside.Core.DAO.SqlEntityDAO {
 
         private static readonly String CONNECTION_STRING_KEY = "ConnectionString";
         private static readonly Int32 COMMAND_TIMEOUT = 300;

@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Spring2.Core.Types;
+using Cortside.Core.Types;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     /// <summary>
     /// Tests for BooleanType

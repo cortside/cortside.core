@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.IO;
 using Microsoft.Extensions.Configuration;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     public class DefaultConnectionStringStrategy : IConnectionStringStrategy {
         private static StringDictionary connectionStrings = new StringDictionary();
         public String GetConnectionString(String key) {

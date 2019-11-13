@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System.Security.Permissions;
 using System.Text;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
 
     /// <summary>
     /// Data type for wrapping phone numbers. 

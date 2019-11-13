@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace Spring2.Core.Util  {
+namespace Cortside.Core.Util  {
 
     /// <summary>
     /// Implements a cache mechanism that can cache objects with timeout

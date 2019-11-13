@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Globalization;
 
-namespace Spring2.Core.Globalization {
+namespace Cortside.Core.Globalization {
 
     /// <summary>
     /// Represents the rules that are used to determine the actual DaylightTime for a given year

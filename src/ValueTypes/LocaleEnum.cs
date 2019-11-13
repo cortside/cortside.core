@@ -2,9 +2,9 @@ using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
     [Serializable]
-    public class LocaleEnum : Spring2.Core.Types.EnumDataType, ILocale, ISerializable {
+    public class LocaleEnum : Cortside.Core.Types.EnumDataType, ILocale, ISerializable {
 
         private static readonly EnumDataTypeList OPTIONS = new EnumDataTypeList();
 

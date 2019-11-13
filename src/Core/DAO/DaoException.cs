@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     /// <summary>
     /// Base exception for DAO exceptions

@@ -1,8 +1,8 @@
 using System;
 using System.Text;
-using Spring2.Core.IoC;
+using Cortside.Core.IoC;
 
-namespace Spring2.Core.Message {
+namespace Cortside.Core.Message {
 
     public class MessageListException : ApplicationException {
 

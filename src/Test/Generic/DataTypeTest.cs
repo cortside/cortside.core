@@ -1,9 +1,9 @@
 ﻿using System;
-using Spring2.Core.Types;
-using Spring2.Core.Types.Generic;
+using Cortside.Core.Types;
+using Cortside.Core.Types.Generic;
 using Xunit;
 
-namespace Spring2.Core.Test.Generic {
+namespace Cortside.Core.Test.Generic {
 
     public class DataTypeTest {
 

@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
     [Serializable]
     public class TypesException : System.Exception, ISerializable {
         public TypesException() {

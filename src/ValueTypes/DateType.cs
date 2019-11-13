@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Security.Permissions;
 using Calendar = System.Globalization.Calendar;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
 
     [Serializable(), StructLayout(LayoutKind.Auto)]
     public struct DateType : IComparable, IFormattable, IConvertible, IDataType, ISerializable {

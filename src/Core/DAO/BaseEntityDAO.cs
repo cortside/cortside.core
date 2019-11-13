@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Data;
-using Spring2.Core.IoC;
+using Cortside.Core.IoC;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     public abstract class BaseEntityDAO {
 

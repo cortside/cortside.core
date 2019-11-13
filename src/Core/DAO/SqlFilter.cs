@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using System.Text;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     /// <summary>
     /// Summary description for SqlFilter.
     /// </summary>

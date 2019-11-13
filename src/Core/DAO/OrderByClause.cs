@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     public class OrderByClause : IOrderBy {
 
         private readonly String sql;

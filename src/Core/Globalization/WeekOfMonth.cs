@@ -1,4 +1,4 @@
-namespace Spring2.Core.Globalization {
+namespace Cortside.Core.Globalization {
 
     /// <summary>
     /// Specification of an occurance within a month (i.e. last Sunday in October)

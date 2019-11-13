@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using Spring2.Core.DAO;
-using Spring2.Core.Types;
+using Cortside.Core.DAO;
+using Cortside.Core.Types;
 
-namespace Spring2.Core.Reporting {
+namespace Cortside.Core.Reporting {
     public class Report {
         private Report() {
         }

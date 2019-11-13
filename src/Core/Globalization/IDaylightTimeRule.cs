@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace Spring2.Core.Globalization {
+namespace Cortside.Core.Globalization {
 
     public interface IDaylightTimeRule {
         /// <summary>

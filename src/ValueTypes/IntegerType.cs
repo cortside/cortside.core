@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
     [System.Serializable, System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct IntegerType : System.IComparable, System.IFormattable, IDataType, ISerializable {
         private System.Int32 myValue;

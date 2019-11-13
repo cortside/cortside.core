@@ -1,4 +1,4 @@
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
 
     public enum TypeState : short {
         DEFAULT,

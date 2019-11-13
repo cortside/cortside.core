@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using System.Globalization;
-using Spring2.Core.Globalization;
+using Cortside.Core.Globalization;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     public class RegionalTimeZoneTest {
 

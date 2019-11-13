@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
 
     [Serializable]
     public struct StringType : IComparable, ICloneable, IEnumerable, IDataType, ISerializable {

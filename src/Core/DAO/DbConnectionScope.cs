@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     /// <summary>
     /// Options for modifying how DbConnectionScope.Current is affected while constructing a new scope.
     /// </summary>

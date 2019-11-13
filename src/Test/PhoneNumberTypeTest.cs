@@ -1,8 +1,7 @@
-
-using Spring2.Core.Types;
+using Cortside.Core.Types;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     public class PhoneNumberTypeTest {
 

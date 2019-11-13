@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Spring2.Core.Types;
+using Cortside.Core.Types;
 using Xunit;
 
-namespace Spring2.Core.Test.Serialization {
+namespace Cortside.Core.Test.Serialization {
 
     public class IntegerTypeTest {
 

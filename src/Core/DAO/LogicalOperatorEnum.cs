@@ -1,4 +1,4 @@
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     /// <summary>
     /// Logical operators to be pairs with database expressions

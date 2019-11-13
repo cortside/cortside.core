@@ -3,9 +3,9 @@ using System.Collections;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
     [Serializable]
-    public class CurrencyCodeEnum : Spring2.Core.Types.EnumDataType, ISerializable {
+    public class CurrencyCodeEnum : Cortside.Core.Types.EnumDataType, ISerializable {
 
         private static readonly ArrayList OPTIONS = new ArrayList();
 

@@ -1,9 +1,9 @@
 using System;
 
-using Spring2.Core.Types;
+using Cortside.Core.Types;
 
-namespace Spring2.Core.Reporting {
-    public class SqlColumnData : Spring2.Core.DataObject.DataObject {
+namespace Cortside.Core.Reporting {
+    public class SqlColumnData : Cortside.Core.DataObject.DataObject {
 
         private StringType name = StringType.DEFAULT;
         private StringType type = StringType.DEFAULT;

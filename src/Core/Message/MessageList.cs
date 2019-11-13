@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace Spring2.Core.Message {
+namespace Cortside.Core.Message {
 
     public class MessageList : CollectionBase {
 

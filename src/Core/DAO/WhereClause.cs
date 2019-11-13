@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     /// <summary>
     /// Utility class to construct WHERE clause sql fragments

@@ -1,6 +1,6 @@
 using System.Data;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     public class ColumnMetaData {
         private readonly string name = "";
         private readonly string sqlName = "";

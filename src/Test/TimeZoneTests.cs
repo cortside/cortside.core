@@ -1,8 +1,8 @@
 using System;
-using Spring2.Core.Globalization;
+using Cortside.Core.Globalization;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     /// <summary>
     /// Summary description for TimeZoneTests

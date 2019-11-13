@@ -3,7 +3,7 @@ using System.Collections;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
 
     /// <summary>
     /// StringType generic collection

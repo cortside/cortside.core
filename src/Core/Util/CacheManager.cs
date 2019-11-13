@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
-namespace Spring2.Core.Util {
+namespace Cortside.Core.Util {
     /// <summary>
     /// Summary description for CacheManager.
     /// </summary>

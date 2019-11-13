@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Spring2.Core.Types;
+using Cortside.Core.Types;
 
-namespace Spring2.Core.Reporting {
-    public class SqlReportData : Spring2.Core.DataObject.DataObject {
+namespace Cortside.Core.Reporting {
+    public class SqlReportData : Cortside.Core.DataObject.DataObject {
         private StringType reportName = StringType.DEFAULT;
         private StringType displayName = StringType.DEFAULT;
         private StringType parameterName = StringType.DEFAULT;

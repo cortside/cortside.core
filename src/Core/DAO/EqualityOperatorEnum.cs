@@ -1,4 +1,4 @@
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     /// <summary>
     /// Equality operators for database predicates

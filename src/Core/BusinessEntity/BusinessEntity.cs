@@ -1,9 +1,9 @@
 using System;
 
-namespace Spring2.Core.BusinessEntity {
+namespace Cortside.Core.BusinessEntity {
 
     [Serializable]
-    public abstract class BusinessEntity : Spring2.Core.DataObject.DataObject, IBusinessEntity {
+    public abstract class BusinessEntity : Cortside.Core.DataObject.DataObject, IBusinessEntity {
 
         protected Boolean isNew = true;
 

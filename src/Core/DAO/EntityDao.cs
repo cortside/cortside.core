@@ -3,9 +3,9 @@
 //using System.Collections.Specialized;
 //using System.Data;
 //using System.Data.SqlClient;
-//using Spring2.Core.Util;
+//using Cortside.Core.Util;
 
-//namespace Spring2.Core.DAO {
+//namespace Cortside.Core.DAO {
 
 //    public abstract class EntityDAO {
 

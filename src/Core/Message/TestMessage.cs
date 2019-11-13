@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.Message {
+namespace Cortside.Core.Message {
 
     /// <summary>
     /// Simple message for testing and to show how messages are created.

@@ -2,7 +2,7 @@ using System;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
     /// <summary>
     /// RowVersion type for the Timestamp values in SQL Server.
     /// </summary>

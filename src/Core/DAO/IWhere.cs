@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     public interface IWhere {
         String FormatSql();
     }

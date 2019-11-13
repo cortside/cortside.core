@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Spring2.Core.Util {
+namespace Cortside.Core.Util {
     public static class StringExtensions {
 
         /// <summary>

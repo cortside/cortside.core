@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Spring2.Core.Types.Generic {
+namespace Cortside.Core.Types.Generic {
 
     [Serializable]
     public struct DataType<T> : IDataType where T : struct, IComparable { //, IComparable, IFormattable, ISerializable {

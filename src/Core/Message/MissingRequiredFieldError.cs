@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.Message {
+namespace Cortside.Core.Message {
 
     public class MissingRequiredFieldError : Message {
         readonly String fieldName = String.Empty;

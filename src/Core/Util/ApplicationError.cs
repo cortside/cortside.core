@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.Util {
+namespace Cortside.Core.Util {
 
     /// <summary>
     /// Represents an error caused by user input.

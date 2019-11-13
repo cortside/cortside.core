@@ -4,14 +4,14 @@ using System.Globalization;
 using System.Reflection;
 using System.Xml;
 
-namespace Spring2.Core.Globalization {
+namespace Cortside.Core.Globalization {
 
     /// <summary>
     /// Represents the rules that are used to determine the actual DaylightTime for a given year
     /// </summary>
     public class XmlDaylightTimeRule : IDaylightTimeRule {
 
-        public static readonly String RESOURCE_FILE_NAME = "Spring2.Core.Globalization.RegionalTimeZones.xml";
+        public static readonly String RESOURCE_FILE_NAME = "Cortside.Core.Globalization.RegionalTimeZones.xml";
 
         private readonly String name = null;
 

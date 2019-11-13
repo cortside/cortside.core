@@ -1,7 +1,7 @@
 using System;
 using System.Data.SqlClient;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     public class SqlDaoTransaction : DaoTransaction {
 
         public SqlDaoTransaction(SqlTransaction trans) : base(trans) { }

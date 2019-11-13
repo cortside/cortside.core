@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
     /// <summary>
     /// Summary description for SqlBetweenPredicate.
     /// </summary>

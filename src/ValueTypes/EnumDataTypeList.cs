@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
 
     /// <summary>
     /// EnumDataType generic collection

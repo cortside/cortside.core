@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.Message {
+namespace Cortside.Core.Message {
 
     public class SimpleFormatter : IMessageFormatter {
         public String Format(Message message) {

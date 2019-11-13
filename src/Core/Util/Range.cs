@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.Util {
+namespace Cortside.Core.Util {
     /// <summary>
     /// Reprsents a range with a specific start and end
     /// </summary>

@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     public abstract class SqlEntityDAO : BaseEntityDAO {
 

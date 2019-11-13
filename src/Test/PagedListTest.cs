@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
-using Spring2.Core.Util;
+using Cortside.Core.Util;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     /// <summary>
     /// Summary description for PagedListTest.

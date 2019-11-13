@@ -1,6 +1,6 @@
 using System;
 
-namespace Spring2.Core.BusinessEntity {
+namespace Cortside.Core.BusinessEntity {
 
     public interface IBusinessEntity {
         Boolean IsNew {

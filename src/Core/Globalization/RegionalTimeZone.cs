@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Globalization;
 
-namespace Spring2.Core.Globalization {
+namespace Cortside.Core.Globalization {
 
     /*
      * TODO:

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
-namespace Spring2.Core.Types {
+namespace Cortside.Core.Types {
     [Serializable, StructLayout(LayoutKind.Sequential)]
     public struct CurrencyType : IFormattable, IComparable, IDataType, ISerializable {
         private Decimal myValue;

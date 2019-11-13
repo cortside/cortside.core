@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Specialized;
 using System.Reflection;
 
-using Spring2.Core.Message;
-using Spring2.Core.Types;
+using Cortside.Core.Message;
+using Cortside.Core.Types;
 
-namespace Spring2.Core.PropertyPopulator {
+namespace Cortside.Core.PropertyPopulator {
     /// <summary>
     /// Summary description for PropertyPopulator.
     /// </summary>
@@ -138,7 +138,7 @@ namespace Spring2.Core.PropertyPopulator {
         /// <param name="type" type="System.Type"></param>
         /// <returns>The parsed value, or null indicating that this type was not parsable by this method</returns>
         private object ParseCustomValue(String val, Type type) {
-            // check for Spring2.Core.Types
+            // check for Cortside.Core.Types
             if (typeof(StringType).Equals(type)) {
                 return StringType.Parse(val);
 

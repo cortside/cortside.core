@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Spring2.Core.IoC {
+namespace Cortside.Core.IoC {
     public static class ClassRegistry {
         //[AttributeUsage(AttributeTargets.Constructor)]
         //public class InjectionConstructorAttribute : Attribute { }

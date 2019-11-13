@@ -3,7 +3,7 @@ using System.Collections;
 using System.Reflection;
 using System.Text;
 
-namespace Spring2.Core.DataObject {
+namespace Cortside.Core.DataObject {
 
     /// <summary>
     /// Abstract base class for data objects.

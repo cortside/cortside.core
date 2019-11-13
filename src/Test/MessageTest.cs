@@ -1,8 +1,8 @@
 using System;
-using Spring2.Core.Message;
+using Cortside.Core.Message;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     public class MessageTest {
 

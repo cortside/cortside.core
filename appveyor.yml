@@ -1,5 +1,4 @@
 image: Visual Studio 2017
-
 version: 1.0.{build}
 
 configuration:
@@ -24,9 +23,6 @@ assembly_info:
 before_build:
   - appveyor-retry dotnet restore src/Cortside.Core.sln -v Minimal
   - set DNX_BUILD_VERSION=%APPVEYOR_BUILD_NUMBER%
-  - dotnet --info
-  - cd src
-  - nuget restore
 
 build:
   project: src/Cortside.Core.sln
@@ -43,8 +39,6 @@ cache:
   
 nuget:
   disable_publish_on_pr: true
-#  account_feed: true
-#  project_feed: true
   
 test:
   assemblies:

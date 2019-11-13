@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Data;
 
-namespace Spring2.Core.DAO {
+namespace Cortside.Core.DAO {
 
     /// <summary>
     /// Base class for database filters that offers the ability to create query fragments without having to know the

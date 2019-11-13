@@ -1,10 +1,10 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using Spring2.Core.DAO;
+using Cortside.Core.DAO;
 using Xunit;
 
-namespace Spring2.Core.Test {
+namespace Cortside.Core.Test {
 
     /// <summary>
     /// Summary description for SqlBetweenPredicateTest.
