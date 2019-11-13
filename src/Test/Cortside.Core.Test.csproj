@@ -102,7 +102,6 @@
     <Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web" />
     <ProjectReference Include="..\Core\Cortside.Core.csproj" />
     <ProjectReference Include="..\PropertyPopulator\Cortside.Core.PropertyPopulator.csproj" />
     <ProjectReference Include="..\Reporting\Cortside.Core.Reporting.csproj" />
@@ -111,6 +110,9 @@
   <ItemGroup>
     <Compile Remove="DataObjectTest.cs" />
     <Compile Remove="SqlEntityDAOTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Cortside.Core.Test.v3.ncrunchproject" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.4.1" />

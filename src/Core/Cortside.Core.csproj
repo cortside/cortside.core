@@ -68,9 +68,6 @@
     <PostBuildEvent />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
     <EmbeddedResource Include="Globalization\RegionalTimeZones.xml" />
   </ItemGroup>
