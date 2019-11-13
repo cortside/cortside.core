@@ -29,17 +29,11 @@ before_build:
   - nuget restore
 
 build:
+  project: src/Cortside.Core.sln
   publish_nuget: true
   publish_nuget_symbols: true
   include_nuget_references: true
   verbosity: minimal
-
-build_script:
-#  - choco install "sonarscanner-msbuild-net46" -y
-#  - SonarScanner.MSBuild.exe begin /k:"**YourUniqueProjectName**" /d:"sonar.host.url=https://sonarcloud.io" /o:"**YourSonarQubeOrganisationKey**" /d:"sonar.login=**YourSonarQubeToken**"
-  - dotnet build src/Cortside.Core.sln --configuration %Configuration% /property:Version=%APPVEYOR_BUILD_VERSION%
-#  - msbuild /verbosity:quiet "**YourProjectName**.sln"
-#  - SonarScanner.MSBuild.exe end /d:"sonar.login=59b72fb99d508caa60c35c1c9243ecef94e6330f"
 
 after_build:
   - ps: >-
