@@ -1,4 +1,6 @@
-version: 1.0.{build}.0
+image: Visual Studio 2017
+
+version: 1.0.{build}
 shallow_clone: true
 assembly_info:
   patch: true
