@@ -1,5 +1,4 @@
 using System;
-using System.Configuration;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 using System.Text;
@@ -216,46 +215,46 @@ namespace Spring2.Core.Types {
             }
         }
 
-        /// <summary>
-        /// Uses the App.config 'PhoneNumberDisplayFormat' and 'PhoneNumberExtensionDisplayFormat' settings if they exist
-        /// </summary>
-        /// <returns>Formatted Phone Number String</returns>
-        public override String ToString() {
-            String phoneNumberFormat;
-            String extensionFormat;
-            if (ConfigurationManager.AppSettings[PHONE_NUMBER_FORMAT_OVERRIDE_KEY] != null) {
-                phoneNumberFormat = ConfigurationManager.AppSettings[PHONE_NUMBER_FORMAT_OVERRIDE_KEY];
-            } else {
-                phoneNumberFormat = DEFAULT_PHONE_NUMBER_FORMAT;
-            }
-            if (ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY] != null) {
-                extensionFormat = ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY];
-            } else {
-                extensionFormat = DEFAULT_EXTENSION_FORMAT;
-            }
-            return ToString(phoneNumberFormat, extensionFormat);
-        }
+        ///// <summary>
+        ///// Uses the App.config 'PhoneNumberDisplayFormat' and 'PhoneNumberExtensionDisplayFormat' settings if they exist
+        ///// </summary>
+        ///// <returns>Formatted Phone Number String</returns>
+        //public override String ToString() {
+        //    String phoneNumberFormat;
+        //    String extensionFormat;
+        //    if (ConfigurationManager.AppSettings[PHONE_NUMBER_FORMAT_OVERRIDE_KEY] != null) {
+        //        phoneNumberFormat = ConfigurationManager.AppSettings[PHONE_NUMBER_FORMAT_OVERRIDE_KEY];
+        //    } else {
+        //        phoneNumberFormat = DEFAULT_PHONE_NUMBER_FORMAT;
+        //    }
+        //    if (ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY] != null) {
+        //        extensionFormat = ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY];
+        //    } else {
+        //        extensionFormat = DEFAULT_EXTENSION_FORMAT;
+        //    }
+        //    return ToString(phoneNumberFormat, extensionFormat);
+        //}
 
-        /// <summary>
-        /// /// <summary>
-        /// 0 = Area Code
-        /// 1 = Exchange
-        /// 2 = Number
-        /// Uses the App.config 'PhoneNumberExtensionDisplayFormat' setting if it exists
-        /// </summary>
-        /// </summary>
-        /// <param name="phoneNumberFormat"></param>
-        /// <returns>Formatted Phone Number string </returns>
-        public override String ToString(String phoneNumberFormat) {
-            String extensionFormat;
-            if (ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY] != null) {
-                extensionFormat = ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY];
-            } else {
-                extensionFormat = DEFAULT_EXTENSION_FORMAT;
-            }
-            return ToString(phoneNumberFormat, extensionFormat);
+        ///// <summary>
+        ///// /// <summary>
+        ///// 0 = Area Code
+        ///// 1 = Exchange
+        ///// 2 = Number
+        ///// Uses the App.config 'PhoneNumberExtensionDisplayFormat' setting if it exists
+        ///// </summary>
+        ///// </summary>
+        ///// <param name="phoneNumberFormat"></param>
+        ///// <returns>Formatted Phone Number string </returns>
+        //public override String ToString(String phoneNumberFormat) {
+        //    String extensionFormat;
+        //    if (ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY] != null) {
+        //        extensionFormat = ConfigurationManager.AppSettings[EXTENSION_FORMAT_OVERRIDE_KEY];
+        //    } else {
+        //        extensionFormat = DEFAULT_EXTENSION_FORMAT;
+        //    }
+        //    return ToString(phoneNumberFormat, extensionFormat);
 
-        }
+        //}
 
         /// <summary>
         /// 0 = Area Code

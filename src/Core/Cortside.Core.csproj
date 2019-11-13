@@ -1,87 +1,93 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-	<ProjectType>Local</ProjectType>
-	<ProductVersion>9.0.21022</ProductVersion>
-	<ApplicationIcon />
-	<AssemblyKeyContainerName />
-	<AssemblyName>Spring2.Core</AssemblyName>
-	<AssemblyOriginatorKeyFile />
-	<DefaultClientScript>JScript</DefaultClientScript>
-	<DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
-	<DefaultTargetSchema>IE50</DefaultTargetSchema>
-	<RootNamespace>Spring2.Core</RootNamespace>
-	<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-	<StartupObject />
-	<FileUpgradeFlags />
-	<UpgradeBackupLocation />
-	<IsWebBootstrapper>false</IsWebBootstrapper>
-	<TargetFramework>net472</TargetFramework>
-	<PublishUrl>publish\</PublishUrl>
-	<Install>true</Install>
-	<InstallFrom>Disk</InstallFrom>
-	<UpdateEnabled>false</UpdateEnabled>
-	<UpdateMode>Foreground</UpdateMode>
-	<UpdateInterval>7</UpdateInterval>
-	<UpdateIntervalUnits>Days</UpdateIntervalUnits>
-	<UpdatePeriodically>false</UpdatePeriodically>
-	<UpdateRequired>false</UpdateRequired>
-	<MapFileExtensions>true</MapFileExtensions>
-	<UseApplicationTrust>false</UseApplicationTrust>
-	<BootstrapperEnabled>true</BootstrapperEnabled>
-	<Company>Spring2</Company>
-	<Description>description</Description>
-	<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-	<ConfigurationOverrideFile />
-	<FileAlignment>4096</FileAlignment>
-	<RegisterForComInterop>false</RegisterForComInterop>
-	<NoStdLib>false</NoStdLib>
-	<RemoveIntegerChecks>false</RemoveIntegerChecks>
-	<BaseAddress>285212672</BaseAddress>
-	<PreBuildEvent />
-	<PostBuildEvent />
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<OutputPath>..\build\</OutputPath>
-	<DocumentationFile />
-	<NoWarn>1591</NoWarn>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-	<DebugType>full</DebugType>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<OutputPath>..\build\$(Configuration)\Core\</OutputPath>
-	<DocumentationFile />
-	<NoWarn />
-	<DebugType>none</DebugType>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
-	<OutputPath>..\build\Core\</OutputPath>
-	<DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
-	<DocumentationFile>Spring2.Core.xml</DocumentationFile>
-	<DebugSymbols>true</DebugSymbols>
-	<NoWarn>1591,1699,0618</NoWarn>
-	<Optimize>false</Optimize>
-	<DebugType>full</DebugType>
-    </PropertyGroup>
-    <PropertyGroup>
-	<PreBuildEvent />
-	<PostBuildEvent />
-    </PropertyGroup>
-    <ItemGroup>
-	<Reference Include="System.Configuration" />
-    </ItemGroup>
-    <ItemGroup>
-	<Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
-	<EmbeddedResource Include="Globalization\RegionalTimeZones.xml" />
-    </ItemGroup>
-    <ItemGroup>
-	<Compile Remove="DataObject\DataObject.cs" />
-	<Compile Remove="DataObject\DataObjectCompareDetail.cs" />
-	<Compile Remove="DataObject\DataObjectCompareList.cs" />
-	<Compile Remove="DataObject\DataObjectCompareOptionEnum.cs" />
-	<Compile Remove="DataObject\EntityDataObject.cs" />
-	<Compile Remove="DataObject\IEntityDataObject.cs" />
-	<Compile Remove="Util\Cache.cs" />
-	<Compile Remove="Util\CachedItem.cs" />
-	<Compile Remove="Util\CacheManager.cs" />
-    </ItemGroup>
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>Spring2.Core</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <RootNamespace>Spring2.Core</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <Company>Spring2</Company>
+    <Description>description</Description>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <ConfigurationOverrideFile />
+    <FileAlignment>4096</FileAlignment>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <NoStdLib>false</NoStdLib>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <BaseAddress>285212672</BaseAddress>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\build\</OutputPath>
+    <DocumentationFile />
+    <NoWarn>1591,0618</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\build\$(Configuration)\Core\</OutputPath>
+    <DocumentationFile />
+    <NoWarn />
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
+    <OutputPath>..\build\Core\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
+    <DocumentationFile>Spring2.Core.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <NoWarn>1591,1699,0618</NoWarn>
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
+    <EmbeddedResource Include="Globalization\RegionalTimeZones.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DataObject\DataObject.cs" />
+    <Compile Remove="DataObject\DataObjectCompareDetail.cs" />
+    <Compile Remove="DataObject\DataObjectCompareList.cs" />
+    <Compile Remove="DataObject\DataObjectCompareOptionEnum.cs" />
+    <Compile Remove="DataObject\EntityDataObject.cs" />
+    <Compile Remove="DataObject\IEntityDataObject.cs" />
+    <Compile Remove="Util\Cache.cs" />
+    <Compile Remove="Util\CachedItem.cs" />
+    <Compile Remove="Util\CacheManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+  </ItemGroup>
 </Project>

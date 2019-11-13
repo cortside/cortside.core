@@ -1,117 +1,118 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-	<ProjectType>Local</ProjectType>
-	<ProductVersion>9.0.30729</ProductVersion>
-	<ApplicationIcon />
-	<AssemblyKeyContainerName />
-	<AssemblyName>Spring2.Core.Test</AssemblyName>
-	<AssemblyOriginatorKeyFile />
-	<DefaultClientScript>JScript</DefaultClientScript>
-	<DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
-	<DefaultTargetSchema>IE50</DefaultTargetSchema>
-	<RootNamespace>Spring2.Core</RootNamespace>
-	<RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-	<StartupObject />
-	<FileUpgradeFlags />
-	<UpgradeBackupLocation />
-	<TargetFramework>net472</TargetFramework>
-	<PublishUrl>publish\</PublishUrl>
-	<Install>true</Install>
-	<InstallFrom>Disk</InstallFrom>
-	<UpdateEnabled>false</UpdateEnabled>
-	<UpdateMode>Foreground</UpdateMode>
-	<UpdateInterval>7</UpdateInterval>
-	<UpdateIntervalUnits>Days</UpdateIntervalUnits>
-	<UpdatePeriodically>false</UpdatePeriodically>
-	<UpdateRequired>false</UpdateRequired>
-	<MapFileExtensions>true</MapFileExtensions>
-	<ApplicationRevision>0</ApplicationRevision>
-	<ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-	<IsWebBootstrapper>false</IsWebBootstrapper>
-	<UseApplicationTrust>false</UseApplicationTrust>
-	<BootstrapperEnabled>true</BootstrapperEnabled>
-	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	<CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-	<FileAlignment>4096</FileAlignment>
-	<BaseAddress>285212672</BaseAddress>
-	<PreBuildEvent />
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<OutputPath>..\build\Test\</OutputPath>
-	<ConfigurationOverrideFile />
-	<DocumentationFile />
-	<NoStdLib>false</NoStdLib>
-	<NoWarn>1591</NoWarn>
-	<RegisterForComInterop>false</RegisterForComInterop>
-	<RemoveIntegerChecks>false</RemoveIntegerChecks>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-	<DebugType>full</DebugType>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<OutputPath>bin\$(Configuration)\</OutputPath>
-	<ConfigurationOverrideFile />
-	<DocumentationFile />
-	<NoStdLib>false</NoStdLib>
-	<NoWarn />
-	<RegisterForComInterop>false</RegisterForComInterop>
-	<RemoveIntegerChecks>false</RemoveIntegerChecks>
-	<DebugType>none</DebugType>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
-	<OutputPath>..\build\Core\Test\</OutputPath>
-	<ConfigurationOverrideFile />
-	<DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
-	<DocumentationFile>Spring2.Core.Test.xml</DocumentationFile>
-	<DebugSymbols>true</DebugSymbols>
-	<NoStdLib>false</NoStdLib>
-	<NoWarn>1591,1718</NoWarn>
-	<Optimize>false</Optimize>
-	<RegisterForComInterop>false</RegisterForComInterop>
-	<RemoveIntegerChecks>false</RemoveIntegerChecks>
-	<DebugType>full</DebugType>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-	<OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
-	<DocumentationFile>Spring2.Core.Test.xml</DocumentationFile>
-	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-	<NoWarn>1591</NoWarn>
-	<DebugType>full</DebugType>
-	<CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-	<CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-	<OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
-	<CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-	<CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|x86' ">
-	<DebugSymbols>true</DebugSymbols>
-	<OutputPath>bin\$(Platform)\NET_2_0\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;NET_2_0</DefineConstants>
-	<DocumentationFile>Spring2.Core.Test.xml</DocumentationFile>
-	<NoWarn>1591,1718</NoWarn>
-	<DebugType>full</DebugType>
-	<CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
-	<CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
-    </PropertyGroup>
-    <PropertyGroup>
-	<PreBuildEvent />
-    </PropertyGroup>
-    <ItemGroup>
-	<Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-	<Reference Include="System.Web" />
-	<ProjectReference Include="..\Core\Cortside.Core.csproj" />
-	<ProjectReference Include="..\PropertyPopulator\Cortside.Core.PropertyPopulator.csproj" />
-	<ProjectReference Include="..\Reporting\Cortside.Core.Reporting.csproj" />
-	<ProjectReference Include="..\ValueTypes\Cortside.Core.Types.csproj" />
-    </ItemGroup>
-    <ItemGroup>
-	<Compile Remove="DataObjectTest.cs" />
-	<Compile Remove="SqlEntityDAOTest.cs" />
-    </ItemGroup>
-    <ItemGroup>
-	<PackageReference Include="xunit" Version="2.4.1" />
-    </ItemGroup>
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>Spring2.Core.Test</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <RootNamespace>Spring2.Core</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <FileAlignment>4096</FileAlignment>
+    <BaseAddress>285212672</BaseAddress>
+    <PreBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\build\Test\</OutputPath>
+    <ConfigurationOverrideFile />
+    <DocumentationFile />
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591,0618</NoWarn>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <ConfigurationOverrideFile />
+    <DocumentationFile />
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
+    <OutputPath>..\build\Core\Test\</OutputPath>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
+    <DocumentationFile>Spring2.Core.Test.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>1591,1718</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <DocumentationFile>Spring2.Core.Test.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\$(Platform)\NET_2_0\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NET_2_0</DefineConstants>
+    <DocumentationFile>Spring2.Core.Test.xml</DocumentationFile>
+    <NoWarn>1591,1718</NoWarn>
+    <DebugType>full</DebugType>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+    <ProjectReference Include="..\Core\Cortside.Core.csproj" />
+    <ProjectReference Include="..\PropertyPopulator\Cortside.Core.PropertyPopulator.csproj" />
+    <ProjectReference Include="..\Reporting\Cortside.Core.Reporting.csproj" />
+    <ProjectReference Include="..\ValueTypes\Cortside.Core.Types.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DataObjectTest.cs" />
+    <Compile Remove="SqlEntityDAOTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.4.1" />
+  </ItemGroup>
 </Project>
