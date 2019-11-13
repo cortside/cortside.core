@@ -30,3 +30,11 @@ Cubby
 Core/src/obj/*
 /Core/build/*
 /src/obj/*
+**/obj/*
+**/bin/*
+*.user
+src/.vs
+**/_NCrunch_*
+src/build
+src/packages
+*.ncrunchproject

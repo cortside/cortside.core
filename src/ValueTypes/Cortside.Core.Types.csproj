@@ -4,22 +4,22 @@
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{80B94045-4DE6-4BB0-BE22-C5CC0E772695}</ProjectGuid>
+    <ProjectGuid>{FB2D9DAA-2340-468C-8018-138748DA2EAE}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>
     </ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>Spring2.Core</AssemblyName>
+    <AssemblyName>Spring2.Core.Types</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
-    <DefaultHTMLPageLayout>Flow</DefaultHTMLPageLayout>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>Spring2.Core</RootNamespace>
+    <RootNamespace>Spring2.Core.Types</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -54,7 +54,7 @@
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DocumentationFile>
     </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
@@ -73,7 +73,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\build\Release\Core\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
@@ -98,18 +98,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
-    <OutputPath>..\build\Core\</OutputPath>
+    <OutputPath>..\build\Types\</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
-    <DocumentationFile>Spring2.Core.xml</DocumentationFile>
+    <DocumentationFile>Spring2.Core.Types.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
-    <NoWarn>1591,1699,0618</NoWarn>
+    <NoWarn>1699,3019,0618,1591</NoWarn>
     <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
@@ -128,179 +128,143 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
-    <Reference Include="System.Drawing">
-      <Name>System.Drawing</Name>
-    </Reference>
-    <Reference Include="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyVersionInfo.cs">
+    <Compile Include="..\AssemblyVersionInfo.cs">
+      <Link>AssemblyVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BusinessEntity\BusinessEntity.cs">
+    <Compile Include="BooleanType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BusinessEntity\IBusinessEntity.cs">
+    <Compile Include="CountryCodeEnum.cs" />
+    <Compile Include="CurrencyCodeEnum.cs" />
+    <Compile Include="CurrencyType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\BaseEntityDAO.cs">
+    <Compile Include="CurrencyTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\ColumnMetaData.cs" />
-    <Compile Include="DAO\DaoException.cs">
+    <Compile Include="DataType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\DaoTransaction.cs">
+    <Compile Include="Generic\DataType.cs" />
+    <Compile Include="DateTimeType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\DatabaseFilter.cs">
+    <Compile Include="DateType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\DbConnectionScope.cs">
+    <Compile Include="DateTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\DefaultConnectionStringStrategy.cs" />
-    <Compile Include="DAO\EntityDAO.cs">
+    <Compile Include="DateTimeTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\EqualityOperatorEnum.cs">
+    <Compile Include="DecimalType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\FinderException.cs">
+    <Compile Include="DecimalTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\IConnectionStringStrategy.cs" />
-    <Compile Include="DAO\IDatabaseExpression.cs">
+    <Compile Include="EnumDataType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\IOrderBy.cs">
+    <Compile Include="EnumDataTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\IWhere.cs">
+    <Compile Include="Formatter\DataTypeFormatter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\LogicalOperatorEnum.cs">
+    <Compile Include="GenderType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\OrderByClause.cs">
+    <Compile Include="IDataType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlBetweenPredicate.cs">
+    <Compile Include="IdType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlDaoTransaction.cs">
+    <Compile Include="IdTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlEntityDAO.cs">
+    <Compile Include="ILanguage.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlEqualityPredicate.cs">
+    <Compile Include="ILanguageFactory.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlFilter.cs">
+    <Compile Include="ILocale.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlInPredicate.cs">
+    <Compile Include="ILocaleFactory.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlLiteralPredicate.cs">
+    <Compile Include="IntegerType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlParameterList.cs">
+    <Compile Include="IntegerTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlPredicate.cs">
+    <Compile Include="LanguageEnum.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\SqlUtility.cs">
+    <Compile Include="LanguageEnumList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAO\WhereClause.cs">
+    <Compile Include="LanguageFactory.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Globalization\DaylightTimeRule.cs">
+    <Compile Include="LocaleEnum.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Globalization\IDaylightTimeRule.cs">
+    <Compile Include="LocaleEnumList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Globalization\RegionalTimeZone.cs">
+    <Compile Include="LocaleFactory.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Globalization\WeekOfMonth.cs">
+    <Compile Include="LongType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Globalization\XmlDaylightTimeRule.cs">
+    <Compile Include="PhoneNumberType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IoC\ClassRegistry.cs">
+    <Compile Include="QuantityType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\IMessageFormatter.cs">
+    <Compile Include="RequiredAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\InvalidTypeFormatError.cs">
+    <Compile Include="RowVersionType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\Message.cs">
+    <Compile Include="ShortType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\MessageList.cs">
+    <Compile Include="StringType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\MessageListException.cs">
+    <Compile Include="StringTypeList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\MissingRequiredFieldError.cs">
+    <Compile Include="TimeType.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\ResourceKey.cs">
+    <Compile Include="TypeExceptions.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\SimpleFormatter.cs">
+    <Compile Include="TypesState.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Message\TestMessage.cs">
+    <Compile Include="USStateAndMilitaryCodeEnum.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Util\ApplicationError.cs">
+    <Compile Include="USStateCodeEnum.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Util\ApplicationErrorCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\DateUtil.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\ExceptionError.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\MissingRequiredFieldError.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\Options.cs" />
-    <Compile Include="Util\PagedList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\ParseError.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\Range.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\StringExtensions.cs" />
-    <Compile Include="Util\StringUtil.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Util\Timer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueDataObject\DataObject.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Globalization\RegionalTimeZones.xml" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.core.2.4.1\build\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.4.1\build\xunit.core.props')" />
   <Import Project="packages\xunit.core.2.4.1\build\xunit.core.props" Condition="Exists('packages\xunit.core.2.4.1\build\xunit.core.props')" />
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
@@ -168,171 +169,128 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <Name>System</Name>
-    </Reference>
-    <Reference Include="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Include="System.Web">
-      <Name>System.Web</Name>
-    </Reference>
-    <ProjectReference Include="Cortside.Core.csproj">
-      <Name>Cortside.Core</Name>
-      <Project>{80B94045-4DE6-4BB0-BE22-C5CC0E772695}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
-    <ProjectReference Include="Cortside.Core.PropertyPopulator.csproj">
-      <Name>Cortside.Core.PropertyPopulator</Name>
-      <Project>{A82A4D4A-007B-4870-9C24-DE21C287B43D}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
-    <ProjectReference Include="Cortside.Core.Reporting.csproj">
-      <Name>Cortside.Core.Reporting</Name>
-      <Project>{53A91AEF-E24F-41E9-AF8D-743F291BEEE1}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
-    <ProjectReference Include="Cortside.Core.Types.csproj">
-      <Name>Cortside.Core.Types</Name>
-      <Project>{FB2D9DAA-2340-468C-8018-138748DA2EAE}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
-    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.assert, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.assert.2.4.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.extensibility.core.2.4.1\lib\net452\xunit.core.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.execution.desktop, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>packages\xunit.extensibility.execution.2.4.1\lib\net452\xunit.execution.desktop.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AssemblyVersionInfo.cs">
+    <Compile Include="..\AssemblyVersionInfo.cs">
+      <Link>AssemblyVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\AssemblyInfo.cs">
+    <Compile Include="BooleanTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\BooleanTypeTest.cs">
+    <Compile Include="EnumDataTypeListTest.cs" />
+    <Compile Include="CRC32.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\EnumDataTypeListTest.cs" />
-    <Compile Include="Test\CRC32.cs">
+    <Compile Include="DataTypeSerializationTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\DataTypeSerializationTest.cs">
+    <Compile Include="DataTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\DataTypeTest.cs">
+    <Compile Include="DateTimeTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\DateTimeTypeTest.cs">
+    <Compile Include="DateTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\DateTypeTest.cs">
+    <Compile Include="DaylightTimeRuleTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\DaylightTimeRuleTest.cs">
+    <Compile Include="DecimalTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\DecimalTypeTest.cs">
+    <Compile Include="Generic\DataTypeTest.cs" />
+    <Compile Include="IdTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Generic\DataTypeTest.cs" />
-    <Compile Include="Test\IdTypeTest.cs">
+    <Compile Include="IntegerTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\IntegerTypeTest.cs">
+    <Compile Include="MessageTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\MessageTest.cs">
+    <Compile Include="PagedListTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\PagedListTest.cs">
+    <Compile Include="PhoneNumberTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\PhoneNumberTypeTest.cs">
+    <Compile Include="PropertyPopulatorTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\PropertyPopulatorTest.cs">
+    <Compile Include="RangeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\RangeTest.cs">
+    <Compile Include="RegionalTimeZoneTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\RegionalTimeZoneTest.cs">
+    <Compile Include="SqlBetweenPredicateTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\SqlBetweenPredicateTest.cs">
+    <Compile Include="SqlEqualityPredicateTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\SqlEqualityPredicateTest.cs">
+    <Compile Include="SqlFilterTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\SqlFilterTest.cs">
+    <Compile Include="SqlInPredicateTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\SqlInPredicateTest.cs">
+    <Compile Include="SqlLiteralPredicateTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\SqlLiteralPredicateTest.cs">
+    <Compile Include="StringTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\StringTypeTest.cs">
+    <Compile Include="TestUtilities.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\TestUtilities.cs">
+    <Compile Include="TimeTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\TimeTypeTest.cs">
+    <Compile Include="TimeZoneTests.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\TimeZoneTests.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Test\WhereClauseTest.cs">
+    <Compile Include="WhereClauseTest.cs">
       <SubType>Code</SubType>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Test\App.config" />
-    <Compile Include="Test\Serialization\BooleanTypeTest.cs">
+    <None Include="App.config" />
+    <Compile Include="Serialization\BooleanTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\CurrencyTypeTest.cs">
+    <Compile Include="Serialization\CurrencyTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\DateTimeTypeTest.cs">
+    <Compile Include="Serialization\DateTimeTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\DateTypeTest.cs">
+    <Compile Include="Serialization\DateTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\DecimalTypeTest.cs">
+    <Compile Include="Serialization\DecimalTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\IdTypeTest.cs">
+    <Compile Include="Serialization\IdTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\IntegerTypeTest.cs">
+    <Compile Include="Serialization\IntegerTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\LongTypeTest.cs">
+    <Compile Include="Serialization\LongTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\QuantityTypeTest.cs">
+    <Compile Include="Serialization\QuantityTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\ShortTypeTest.cs">
+    <Compile Include="Serialization\ShortTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\StringTypeTest.cs">
+    <Compile Include="Serialization\StringTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Serialization\TimeTypeTest.cs">
+    <Compile Include="Serialization\TimeTypeTest.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -354,22 +312,60 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <ProjectReference Include="..\Core\Cortside.Core.csproj">
+      <Project>{80b94045-4de6-4bb0-be22-c5cc0e772695}</Project>
+      <Name>Cortside.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PropertyPopulator\Cortside.Core.PropertyPopulator.csproj">
+      <Project>{a82a4d4a-007b-4870-9c24-de21c287b43d}</Project>
+      <Name>Cortside.Core.PropertyPopulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reporting\Cortside.Core.Reporting.csproj">
+      <Project>{53a91aef-e24f-41e9-af8d-743f291beee1}</Project>
+      <Name>Cortside.Core.Reporting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValueTypes\Cortside.Core.Types.csproj">
+      <Project>{fb2d9daa-2340-468c-8018-138748da2eae}</Project>
+      <Name>Cortside.Core.Types</Name>
+    </ProjectReference>
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.4.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.4.1\lib\net452\xunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.execution.2.4.1\lib\net452\xunit.execution.desktop.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>copy $(ProjectDir)Test\App.config $(TargetPath).config
-
-</PostBuildEvent>
+    <PostBuildEvent>
+	    copy $(ProjectDir)Test\App.config $(TargetPath).config
+	</PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\xunit.core.2.4.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.4.1\build\xunit.core.props'))" />
-    <Error Condition="!Exists('packages\xunit.core.2.4.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.4.1\build\xunit.core.targets'))" />
+    <Error Condition="!Exists('..\packages\xunit.core.2.4.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.4.1\build\xunit.core.targets'))" />
   </Target>
-  <Import Project="packages\xunit.core.2.4.1\build\xunit.core.targets" Condition="Exists('packages\xunit.core.2.4.1\build\xunit.core.targets')" />
+  <Import Project="..\packages\xunit.core.2.4.1\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.4.1\build\xunit.core.targets')" />
 </Project>

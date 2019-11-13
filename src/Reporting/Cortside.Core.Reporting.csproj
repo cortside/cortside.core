@@ -2,16 +2,16 @@
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FB2D9DAA-2340-468C-8018-138748DA2EAE}</ProjectGuid>
+    <ProjectGuid>{53A91AEF-E24F-41E9-AF8D-743F291BEEE1}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>
     </ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>Spring2.Core.Types</AssemblyName>
+    <AssemblyName>Spring2.Core.Reporting</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -19,7 +19,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>Spring2.Core.Types</RootNamespace>
+    <RootNamespace>Spring2.Core</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -68,7 +68,6 @@
     <WarningLevel>4</WarningLevel>
     <DebugType>full</DebugType>
     <ErrorReport>prompt</ErrorReport>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -98,18 +97,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
-    <OutputPath>..\build\Types\</OutputPath>
+    <OutputPath>..\build\Reporting\</OutputPath>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <BaseAddress>285212672</BaseAddress>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
-    <DocumentationFile>Spring2.Core.Types.xml</DocumentationFile>
+    <DocumentationFile>Spring2.Core.Reporting.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
-    <NoWarn>1699,3019,0618,1591</NoWarn>
+    <NoWarn>1699,1591</NoWarn>
     <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
@@ -124,147 +123,39 @@
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
-    <Reference Include="System.configuration" />
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <ProjectReference Include="..\Core\Cortside.Core.csproj">
+      <Project>{80B94045-4DE6-4BB0-BE22-C5CC0E772695}</Project>
+      <Name>Cortside.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValueTypes\Cortside.Core.Types.csproj">
+      <Name>Cortside.Core.Types</Name>
+      <Project>{FB2D9DAA-2340-468C-8018-138748DA2EAE}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyVersionInfo.cs">
+      <Link>AssemblyVersionInfo.cs</Link>
+    </Compile>
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AssemblyVersionInfo.cs">
+    <Compile Include="BusinessLogic\Report.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ValueTypes\BooleanType.cs">
+    <Compile Include="DAO\SqlSchemaDAO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ValueTypes\CountryCodeEnum.cs" />
-    <Compile Include="ValueTypes\CurrencyCodeEnum.cs" />
-    <Compile Include="ValueTypes\CurrencyType.cs">
+    <Compile Include="DataObject\SqlColumnData.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ValueTypes\CurrencyTypeList.cs">
+    <Compile Include="DataObject\SqlObjectData.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ValueTypes\DataType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\Generic\DataType.cs" />
-    <Compile Include="ValueTypes\DateTimeType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\DateType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\DateTypeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\DateTimeTypeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\DecimalType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\DecimalTypeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\EnumDataType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\EnumDataTypeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\Formatter\DataTypeFormatter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\GenderType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\IDataType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\IdType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\IdTypeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\ILanguage.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\ILanguageFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\ILocale.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\ILocaleFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\IntegerType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\IntegerTypeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\LanguageEnum.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\LanguageEnumList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\LanguageFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\LocaleEnum.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\LocaleEnumList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\LocaleFactory.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\LongType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\PhoneNumberType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\QuantityType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\RequiredAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\RowVersionType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\ShortType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\StringType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\StringTypeList.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\TimeType.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\TypeExceptions.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\TypesState.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\USStateAndMilitaryCodeEnum.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ValueTypes\USStateCodeEnum.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="DataObject\SqlReportData.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
