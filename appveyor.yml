@@ -53,7 +53,7 @@ after_build:
             dotnet pack $csproj --configuration $env:configuration -o ((get-location).Path + '\artifacts') /property:Version=$fileVersion 
         }
     }
-    
+
 artifacts:
   - path: artifacts\**\*.*
 
