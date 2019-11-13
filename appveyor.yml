@@ -25,6 +25,7 @@ before_build:
   - appveyor-retry dotnet restore src/Cortside.Core.sln -v Minimal
   - set DNX_BUILD_VERSION=%APPVEYOR_BUILD_NUMBER%
   - dotnet --info
+  - cd src
   - nuget restore
 
 build:
