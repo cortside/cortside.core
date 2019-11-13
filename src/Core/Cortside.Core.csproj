@@ -1,5 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Version>1.0.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.21022</ProductVersion>
     <ApplicationIcon />
@@ -28,8 +31,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <Company>Spring2</Company>
-    <Description>description</Description>
+    <Company>Cortside</Company>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <ConfigurationOverrideFile />
     <FileAlignment>4096</FileAlignment>
@@ -57,7 +59,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
     <OutputPath>..\build\Core\</OutputPath>
     <DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
-    <DocumentationFile>Spring2.Core.xml</DocumentationFile>
+    <DocumentationFile>Cortside.Core.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <NoWarn>1591,1699,0618</NoWarn>
     <Optimize>false</Optimize>
@@ -68,7 +70,6 @@
     <PostBuildEvent />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
     <EmbeddedResource Include="Globalization\RegionalTimeZones.xml" />
   </ItemGroup>
   <ItemGroup>

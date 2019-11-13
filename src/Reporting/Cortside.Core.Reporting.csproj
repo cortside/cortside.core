@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Version>1.0.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.30729</ProductVersion>
     <ApplicationIcon />
@@ -57,7 +61,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET_4_0|AnyCPU' ">
     <OutputPath>..\build\Reporting\</OutputPath>
     <DefineConstants>TRACE;DEBUG;NET_4_0;</DefineConstants>
-    <DocumentationFile>Spring2.Core.Reporting.xml</DocumentationFile>
+    <DocumentationFile>Cortside.Core.Reporting.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <NoWarn>1699,1591</NoWarn>
     <Optimize>false</Optimize>
@@ -70,8 +74,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Core\Cortside.Core.csproj" />
     <ProjectReference Include="..\ValueTypes\Cortside.Core.Types.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\AssemblyVersionInfo.cs" Link="AssemblyVersionInfo.cs" />
   </ItemGroup>
 </Project>
