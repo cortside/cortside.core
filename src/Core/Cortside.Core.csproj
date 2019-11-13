@@ -41,7 +41,7 @@
     <PostBuildEvent />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\build\</OutputPath>
+    <OutputPath>..\..\build\</OutputPath>
     <DocumentationFile />
     <NoWarn>1591,0618</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>

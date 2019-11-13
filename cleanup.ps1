@@ -29,6 +29,7 @@ Function Invoke-Cleanup {
         remove "OpenCover"
         remove "Publish"
         remove "TestBin"
+		remove "build"
 
         #return $true
 }

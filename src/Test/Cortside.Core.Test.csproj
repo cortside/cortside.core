@@ -37,7 +37,7 @@
     <PreBuildEvent />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\build\Test\</OutputPath>
+    <OutputPath>..\..\build\Test\</OutputPath>
     <ConfigurationOverrideFile />
     <DocumentationFile />
     <NoStdLib>false</NoStdLib>

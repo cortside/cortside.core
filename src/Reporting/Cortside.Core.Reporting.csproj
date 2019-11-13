@@ -4,12 +4,12 @@
     <ProductVersion>9.0.30729</ProductVersion>
     <ApplicationIcon />
     <AssemblyKeyContainerName />
-    <AssemblyName>Spring2.Core.Reporting</AssemblyName>
+    <AssemblyName>Cortside.Core.Reporting</AssemblyName>
     <AssemblyOriginatorKeyFile />
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
-    <RootNamespace>Spring2.Core</RootNamespace>
+    <RootNamespace>Cortside.Core</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject />
     <FileUpgradeFlags />
@@ -42,7 +42,7 @@
     <PostBuildEvent />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\build\</OutputPath>
+    <OutputPath>..\..\build\</OutputPath>
     <DocumentationFile />
     <NoWarn>1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
