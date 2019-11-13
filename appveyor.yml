@@ -35,11 +35,11 @@ build:
   verbosity: minimal
 
 build_script:
-  - choco install "sonarscanner-msbuild-net46" -y
-  - SonarScanner.MSBuild.exe begin /k:"**YourUniqueProjectName**" /d:"sonar.host.url=https://sonarcloud.io" /o:"**YourSonarQubeOrganisationKey**" /d:"sonar.login=**YourSonarQubeToken**"
-  - dotnet build src/Cortside.Common.sln --configuration %Configuration% /property:Version=%APPVEYOR_BUILD_VERSION%
-  - msbuild /verbosity:quiet "**YourProjectName**.sln"
-  - SonarScanner.MSBuild.exe end /d:"sonar.login=59b72fb99d508caa60c35c1c9243ecef94e6330f"
+#  - choco install "sonarscanner-msbuild-net46" -y
+#  - SonarScanner.MSBuild.exe begin /k:"**YourUniqueProjectName**" /d:"sonar.host.url=https://sonarcloud.io" /o:"**YourSonarQubeOrganisationKey**" /d:"sonar.login=**YourSonarQubeToken**"
+  - dotnet build src/Cortside.Core.sln --configuration %Configuration% /property:Version=%APPVEYOR_BUILD_VERSION%
+#  - msbuild /verbosity:quiet "**YourProjectName**.sln"
+#  - SonarScanner.MSBuild.exe end /d:"sonar.login=59b72fb99d508caa60c35c1c9243ecef94e6330f"
 
 after_build:
   - ps: >-
