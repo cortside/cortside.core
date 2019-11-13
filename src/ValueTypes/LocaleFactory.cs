@@ -5,10 +5,10 @@ namespace Spring2.Core.Types {
     /// Summary description for LocaleFactory.
     /// </summary>
     public class LocaleFactory : ILocaleFactory {
-	public LocaleFactory() {}
+        public LocaleFactory() { }
 
-	public ILocale GetLocale(String locale) {
-	    return LocaleEnum.GetInstance(locale);
-	}
+        public ILocale GetLocale(String locale) {
+            return LocaleEnum.GetInstance(locale);
+        }
     }
 }

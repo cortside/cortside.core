@@ -7,142 +7,140 @@ using System.Security.Permissions;
 namespace Spring2.Core.Types {
     [Serializable, StructLayout(LayoutKind.Sequential)]
     public struct CurrencyType : IFormattable, IComparable, IDataType, ISerializable {
-	private Decimal myValue;
-	private TypeState myState;
+        private Decimal myValue;
+        private TypeState myState;
 
-	// TODO: how should these be cased?
-	public static readonly CurrencyType ZERO = new CurrencyType(Decimal.Zero, TypeState.VALID);
+        // TODO: how should these be cased?
+        public static readonly CurrencyType ZERO = new CurrencyType(Decimal.Zero, TypeState.VALID);
 
-	public static readonly CurrencyType One = new CurrencyType(Decimal.One, TypeState.VALID);
+        public static readonly CurrencyType One = new CurrencyType(Decimal.One, TypeState.VALID);
 
-	public static readonly CurrencyType MinusOne = new CurrencyType(Decimal.MinusOne, TypeState.VALID);
+        public static readonly CurrencyType MinusOne = new CurrencyType(Decimal.MinusOne, TypeState.VALID);
 
-	public static readonly CurrencyType MaxValue = new CurrencyType(Decimal.MaxValue, TypeState.VALID);
+        public static readonly CurrencyType MaxValue = new CurrencyType(Decimal.MaxValue, TypeState.VALID);
 
-	public static readonly CurrencyType MinValue = new CurrencyType(Decimal.MinValue, TypeState.VALID);
+        public static readonly CurrencyType MinValue = new CurrencyType(Decimal.MinValue, TypeState.VALID);
 
-	public static readonly CurrencyType DEFAULT = new CurrencyType(0, TypeState.DEFAULT);
-	public static readonly CurrencyType UNSET = new CurrencyType(0, TypeState.UNSET);
+        public static readonly CurrencyType DEFAULT = new CurrencyType(0, TypeState.DEFAULT);
+        public static readonly CurrencyType UNSET = new CurrencyType(0, TypeState.UNSET);
 
-	#region State management
+        #region State management
 
-	public bool IsValid {
-	    get { return myState == TypeState.VALID; }
-	}
+        public bool IsValid {
+            get { return myState == TypeState.VALID; }
+        }
 
-	public bool IsDefault {
-	    get { return myState == TypeState.DEFAULT; }
-	}
+        public bool IsDefault {
+            get { return myState == TypeState.DEFAULT; }
+        }
 
-	public bool IsUnset {
-	    get { return myState == TypeState.UNSET; }
-	}
+        public bool IsUnset {
+            get { return myState == TypeState.UNSET; }
+        }
 
-	#endregion
+        #endregion
 
-	#region Constructors
+        #region Constructors
 
-	private CurrencyType(decimal value, TypeState state) {
-	    myValue = value;
-	    myState = state;
-	}
+        private CurrencyType(decimal value, TypeState state) {
+            myValue = value;
+            myState = state;
+        }
 
-	public CurrencyType(char value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        public CurrencyType(char value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	public CurrencyType(byte value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        public CurrencyType(byte value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	[System.CLSCompliant(false)]
-	public CurrencyType(sbyte value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        [System.CLSCompliant(false)]
+        public CurrencyType(sbyte value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	public CurrencyType(short value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        public CurrencyType(short value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	[CLSCompliant(false)]
-	public CurrencyType(ushort value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        [CLSCompliant(false)]
+        public CurrencyType(ushort value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	public CurrencyType(int value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        public CurrencyType(int value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	[CLSCompliant(false)]
-	public CurrencyType(uint value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        [CLSCompliant(false)]
+        public CurrencyType(uint value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	// Constructs a Decimal from a long value.
-	//
-	public CurrencyType(long value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        // Constructs a Decimal from a long value.
+        //
+        public CurrencyType(long value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	// Constructs a Decimal from an unsigned long value.
-	//
-	[CLSCompliant(false)]
-	public CurrencyType(ulong value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        // Constructs a Decimal from an unsigned long value.
+        //
+        [CLSCompliant(false)]
+        public CurrencyType(ulong value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	// Constructs a Decimal from a float value.
-	//
-	public CurrencyType(float value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        // Constructs a Decimal from a float value.
+        //
+        public CurrencyType(float value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	// Constructs a Decimal from a double value.
-	//
-	public CurrencyType(double value) {
-	    myValue = new decimal(value);
-	    myState = TypeState.VALID;
-	}
+        // Constructs a Decimal from a double value.
+        //
+        public CurrencyType(double value) {
+            myValue = new decimal(value);
+            myState = TypeState.VALID;
+        }
 
-	public CurrencyType(Decimal value) {
-	    myValue = value;
-	    myState = TypeState.VALID;
-	}
+        public CurrencyType(Decimal value) {
+            myValue = value;
+            myState = TypeState.VALID;
+        }
 
-	public CurrencyType(int[] bits) {
-	    myValue = new decimal(bits);
-	    myState = TypeState.VALID;
-	}
+        public CurrencyType(int[] bits) {
+            myValue = new decimal(bits);
+            myState = TypeState.VALID;
+        }
 
-	public CurrencyType(int lo, int mid, int hi, bool isNegative, byte scale) {
-	    myValue = new decimal(lo, mid, hi, isNegative, scale);
-	    myState = TypeState.VALID;
-	}
-    	
-	public CurrencyType(DecimalType value) {
-	    if (value.IsValid) {
-		myValue = value.ToDecimal();
-		myState = TypeState.VALID;
-	    } else {
-		myValue = 0;
-		myState = TypeState.UNSET;
-	    }
-	}
+        public CurrencyType(int lo, int mid, int hi, bool isNegative, byte scale) {
+            myValue = new decimal(lo, mid, hi, isNegative, scale);
+            myState = TypeState.VALID;
+        }
 
+        public CurrencyType(DecimalType value) {
+            if (value.IsValid) {
+                myValue = value.ToDecimal();
+                myState = TypeState.VALID;
+            } else {
+                myValue = 0;
+                myState = TypeState.UNSET;
+            }
+        }
 
-
-	// Constructs a Decimal from a Currency value.
-	//
+        // Constructs a Decimal from a Currency value.
+        //
 #if notsure
 		internal CurrencyType(Currency value) {
 			Decimal temp = Currency.ToDecimal(value);
@@ -153,264 +151,258 @@ namespace Spring2.Core.Types {
 		}
 #endif
 
-	#endregion
+        #endregion
 
-	#region Cast operators
+        #region Cast operators
 
-	public static explicit operator Decimal(CurrencyType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public static explicit operator Decimal(CurrencyType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
 
-	    return castFrom.myValue;
-	}
+            return castFrom.myValue;
+        }
 
-	public static implicit operator CurrencyType(Double castFrom) {
-	    return new CurrencyType(castFrom);
-	}
+        public static implicit operator CurrencyType(Double castFrom) {
+            return new CurrencyType(castFrom);
+        }
 
-    	public static implicit operator CurrencyType(Decimal castFrom) {
-	    return new CurrencyType(castFrom);
-	}
+        public static implicit operator CurrencyType(Decimal castFrom) {
+            return new CurrencyType(castFrom);
+        }
 
-	public static explicit operator DecimalType(CurrencyType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public static explicit operator DecimalType(CurrencyType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
 
-	    return new DecimalType(castFrom.myValue);
-	}
+            return new DecimalType(castFrom.myValue);
+        }
 
-	public static implicit operator CurrencyType(DecimalType castFrom) {
-	    return new CurrencyType((decimal) castFrom);
-	}
+        public static implicit operator CurrencyType(DecimalType castFrom) {
+            return new CurrencyType((decimal)castFrom);
+        }
 
-	#endregion
+        #endregion
 
-	#region General math methods
+        #region General math methods
 
-	public static CurrencyType Negate(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+        public static CurrencyType Negate(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    CurrencyType result = new CurrencyType(Decimal.Negate(value.myValue), TypeState.VALID);
-	    return result;
-	}
+            CurrencyType result = new CurrencyType(Decimal.Negate(value.myValue), TypeState.VALID);
+            return result;
+        }
 
+        //min/max aren't decimal methods but might be handy
+        public static CurrencyType Max(CurrencyType leftHand, CurrencyType rightHand) {
+            if (Compare(leftHand, rightHand) >= 0) {
+                return leftHand;
+            }
 
-	//min/max aren't decimal methods but might be handy
-	public static CurrencyType Max(CurrencyType leftHand, CurrencyType rightHand) {
-	    if (Compare(leftHand, rightHand) >= 0) {
-		return leftHand;
-	    }
+            return rightHand;
+        }
 
-	    return rightHand;
-	}
+        public static CurrencyType Min(CurrencyType leftHand, CurrencyType rightHand) {
+            if (Compare(leftHand, rightHand) < 0) {
+                return leftHand;
+            }
 
-	public static CurrencyType Min(CurrencyType leftHand, CurrencyType rightHand) {
-	    if (Compare(leftHand, rightHand) < 0) {
-		return leftHand;
-	    }
+            return rightHand;
+        }
 
-	    return rightHand;
-	}
+        public static CurrencyType Round(CurrencyType value, int decimals) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	public static CurrencyType Round(CurrencyType value, int decimals) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+            CurrencyType result = new CurrencyType(Decimal.Round(value.myValue, decimals), TypeState.VALID);
+            return result;
+        }
 
-	    CurrencyType result = new CurrencyType(Decimal.Round(value.myValue, decimals), TypeState.VALID);
-	    return result;
-	}
+        public static CurrencyType Floor(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	public static CurrencyType Floor(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+            CurrencyType result = new CurrencyType(Decimal.Floor(value.myValue), TypeState.VALID);
+            return result;
+        }
 
-	    CurrencyType result = new CurrencyType(Decimal.Floor(value.myValue), TypeState.VALID);
-	    return result;
-	}
+        public static CurrencyType Truncate(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	public static CurrencyType Truncate(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+            CurrencyType result = new CurrencyType(Decimal.Truncate(value.myValue), TypeState.VALID);
+            return result;
+        }
 
-	    CurrencyType result = new CurrencyType(Decimal.Truncate(value.myValue), TypeState.VALID);
-	    return result;
-	}
+        #endregion
 
-	#endregion
+        #region ToString and Parsing
 
-	#region ToString and Parsing
+        public override String ToString() {
+            return IsValid ? this.myValue.ToString("c") : myState.ToString();
+        }
 
-	public override String ToString() {
-	    return IsValid ? this.myValue.ToString("c") : myState.ToString();
-	}
+        public String ToString(String format) {
+            return IsValid ? this.myValue.ToString(format) : myState.ToString();
+        }
 
-	public String ToString(String format) {
-	    return IsValid ? this.myValue.ToString(format) : myState.ToString();
-	}
+        public String ToString(IFormatProvider provider) {
+            return IsValid ? this.myValue.ToString("c", provider) : myState.ToString();
+        }
 
-	public String ToString(IFormatProvider provider) {
-	    return IsValid ? this.myValue.ToString("c", provider) : myState.ToString();
-	}
-         
-	public String ToString(String format, IFormatProvider provider) {
-	    return IsValid ? this.myValue.ToString(format, provider) : myState.ToString();
-	}
+        public String ToString(String format, IFormatProvider provider) {
+            return IsValid ? this.myValue.ToString(format, provider) : myState.ToString();
+        }
 
+        public String Display() {
+            return IsValid ? ToString("c") : String.Empty;
+        }
 
+        public String Display(String format) {
+            return IsValid ? ToString(format) : String.Empty;
+        }
 
-	public String Display() {
-	    return IsValid ? ToString("c") : String.Empty;
-	}
+        public String Display(IFormatProvider provider) {
+            return IsValid ? ToString("c", provider) : String.Empty;
+        }
 
-	public String Display(String format) {
-	    return IsValid ? ToString(format) : String.Empty;
-	}
+        public String Display(String format, IFormatProvider provider) {
+            return IsValid ? ToString(format, provider) : String.Empty;
+        }
 
-	public String Display(IFormatProvider provider) {
-	    return IsValid ? ToString("c", provider) : String.Empty;
-	}
-         
-	public String Display(String format, IFormatProvider provider) {
-	    return IsValid ? ToString(format, provider) : String.Empty;
-	}
+        public static CurrencyType Parse(String from) {
+            return Parse(from, NumberStyles.Currency, null);
+        }
 
+        public static CurrencyType Parse(String from, NumberStyles style) {
+            return Parse(from, style, null);
+        }
 
+        public static CurrencyType Parse(String from, IFormatProvider provider) {
+            CurrencyType result;
+            result.myValue = Decimal.Parse(from, NumberStyles.Currency, provider);
+            result.myState = TypeState.VALID;
 
+            return result;
+        }
 
-	public static CurrencyType Parse(String from) {
-	    return Parse(from, NumberStyles.Currency, null);
-	}
+        public static CurrencyType Parse(String from, NumberStyles style, IFormatProvider provider) {
+            CurrencyType result;
+            result.myValue = Decimal.Parse(from, style, provider);
+            result.myState = TypeState.VALID;
 
-	public static CurrencyType Parse(String from, NumberStyles style) {
-	    return Parse(from, style, null);
-	}
+            return result;
+        }
 
-	public static CurrencyType Parse(String from, IFormatProvider provider) {
-	    CurrencyType result;
-	    result.myValue = Decimal.Parse(from, NumberStyles.Currency, provider);
-	    result.myState = TypeState.VALID;
+        #endregion
 
-	    return result;
-	}
+        #region To<type> conversion methods
 
-	public static CurrencyType Parse(String from, NumberStyles style, IFormatProvider provider) {
-	    CurrencyType result;
-	    result.myValue = Decimal.Parse(from, style, provider);
-	    result.myState = TypeState.VALID;
+        public static byte ToByte(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    return result;
-	}
+            try {
+                return Decimal.ToByte(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "byte");
+            }
+        }
 
-	#endregion
+        [CLSCompliant(false)]
+        public static sbyte ToSByte(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	#region To<type> conversion methods
+            try {
+                return Decimal.ToSByte(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "sbyte");
+            }
+        }
 
-	public static byte ToByte(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+        public static short ToInt16(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    try {
-		return Decimal.ToByte(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "byte");
-	    }
-	}
+            try {
+                return Decimal.ToInt16(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "short");
+            }
+        }
 
-	[CLSCompliant(false)]
-	public static sbyte ToSByte(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+        [CLSCompliant(false)]
+        public static ushort ToUInt16(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    try {
-		return Decimal.ToSByte(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "sbyte");
-	    }
-	}
+            try {
+                return Decimal.ToUInt16(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "ushort");
+            }
+        }
 
-	public static short ToInt16(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+        public static int ToInt32(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    try {
-		return Decimal.ToInt16(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "short");
-	    }
-	}
+            try {
+                return Decimal.ToInt32(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "int");
+            }
+        }
 
-	[CLSCompliant(false)]
-	public static ushort ToUInt16(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+        [CLSCompliant(false)]
+        public static uint ToUInt32(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    try {
-		return Decimal.ToUInt16(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "ushort");
-	    }
-	}
+            try {
+                return Decimal.ToUInt32(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "uint");
+            }
+        }
 
-	public static int ToInt32(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+        public static long ToInt64(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    try {
-		return Decimal.ToInt32(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "int");
-	    }
-	}
+            try {
+                return Decimal.ToInt64(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "long");
+            }
+        }
 
-	[CLSCompliant(false)]
-	public static uint ToUInt32(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
+        [CLSCompliant(false)]
+        public static ulong ToUInt64(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	    try {
-		return Decimal.ToUInt32(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "uint");
-	    }
-	}
-
-	public static long ToInt64(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
-
-	    try {
-		return Decimal.ToInt64(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "long");
-	    }
-	}
-
-	[CLSCompliant(false)]
-	public static ulong ToUInt64(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
-
-	    try {
-		return Decimal.ToUInt64(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "ulong");
-	    }
-	}
+            try {
+                return Decimal.ToUInt64(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "ulong");
+            }
+        }
 
 #if no
 		public static Currency ToCurrency(CurrencyType value) {
@@ -426,426 +418,422 @@ namespace Spring2.Core.Types {
 		}
 #endif
 
-	public static double ToDouble(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
-
-	    try {
-		return Decimal.ToDouble(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "double");
-	    }
-	}
-
-	public static float ToSingle(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
-
-	    try {
-		return Decimal.ToSingle(value.myValue);
-	    } catch (OverflowException) {
-		throw new ValueOverflowException("CurrencyType", "float");
-	    }
-	}
-
-	public static decimal ToDecimal(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
-
-	    return value.myValue;
-	}
-
-	#endregion	      	    	
-
-	#region Conversion Operators
-
-	public static implicit operator CurrencyType(byte value) {
-	    return new CurrencyType(value);
-	}
-
-	[CLSCompliant(false)]
-	public static implicit operator CurrencyType(sbyte value) {
-	    return new CurrencyType(value);
-	}
-
-	public static implicit operator CurrencyType(short value) {
-	    return new CurrencyType(value);
-	}
-
-	[CLSCompliant(false)]
-	public static implicit operator CurrencyType(ushort value) {
-	    return new CurrencyType(value);
-	}
-
-	public static implicit operator CurrencyType(char value) {
-	    return new CurrencyType(value);
-	}
-
-	public static implicit operator CurrencyType(int value) {
-	    return new CurrencyType(value);
-	}
-
-	[CLSCompliant(false)]
-	public static implicit operator CurrencyType(uint value) {
-	    return new CurrencyType(value);
-	}
-
-	public static implicit operator CurrencyType(long value) {
-	    return new CurrencyType(value);
-	}
-
-	[CLSCompliant(false)]
-	public static implicit operator CurrencyType(ulong value) {
-	    return new CurrencyType(value);
-	}
+        public static double ToDouble(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
+
+            try {
+                return Decimal.ToDouble(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "double");
+            }
+        }
+
+        public static float ToSingle(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
+
+            try {
+                return Decimal.ToSingle(value.myValue);
+            } catch (OverflowException) {
+                throw new ValueOverflowException("CurrencyType", "float");
+            }
+        }
+
+        public static decimal ToDecimal(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
+
+            return value.myValue;
+        }
+
+        #endregion
+
+        #region Conversion Operators
+
+        public static implicit operator CurrencyType(byte value) {
+            return new CurrencyType(value);
+        }
+
+        [CLSCompliant(false)]
+        public static implicit operator CurrencyType(sbyte value) {
+            return new CurrencyType(value);
+        }
+
+        public static implicit operator CurrencyType(short value) {
+            return new CurrencyType(value);
+        }
+
+        [CLSCompliant(false)]
+        public static implicit operator CurrencyType(ushort value) {
+            return new CurrencyType(value);
+        }
+
+        public static implicit operator CurrencyType(char value) {
+            return new CurrencyType(value);
+        }
+
+        public static implicit operator CurrencyType(int value) {
+            return new CurrencyType(value);
+        }
+
+        [CLSCompliant(false)]
+        public static implicit operator CurrencyType(uint value) {
+            return new CurrencyType(value);
+        }
+
+        public static implicit operator CurrencyType(long value) {
+            return new CurrencyType(value);
+        }
+
+        [CLSCompliant(false)]
+        public static implicit operator CurrencyType(ulong value) {
+            return new CurrencyType(value);
+        }
+
+        public static explicit operator CurrencyType(float value) {
+            return new CurrencyType(value);
+        }
+
+        public static explicit operator byte(CurrencyType value) {
+            return ToByte(value);
+        }
 
+        [CLSCompliant(false)]
+        public static explicit operator sbyte(CurrencyType value) {
+            return ToSByte(value);
+        }
 
-	public static explicit operator CurrencyType(float value) {
-	    return new CurrencyType(value);
-	}
+        public static explicit operator char(CurrencyType value) {
+            return (char)ToUInt16(value);
+        }
 
-	public static explicit operator byte(CurrencyType value) {
-	    return ToByte(value);
-	}
+        public static explicit operator short(CurrencyType value) {
+            return ToInt16(value);
+        }
 
-	[CLSCompliant(false)]
-	public static explicit operator sbyte(CurrencyType value) {
-	    return ToSByte(value);
-	}
+        [CLSCompliant(false)]
+        public static explicit operator ushort(CurrencyType value) {
+            return ToUInt16(value);
+        }
 
-	public static explicit operator char(CurrencyType value) {
-	    return (char) ToUInt16(value);
-	}
+        public static explicit operator int(CurrencyType value) {
+            return ToInt32(value);
+        }
 
-	public static explicit operator short(CurrencyType value) {
-	    return ToInt16(value);
-	}
+        [CLSCompliant(false)]
+        public static explicit operator uint(CurrencyType value) {
+            return ToUInt32(value);
+        }
 
-	[CLSCompliant(false)]
-	public static explicit operator ushort(CurrencyType value) {
-	    return ToUInt16(value);
-	}
+        public static explicit operator long(CurrencyType value) {
+            return ToInt64(value);
+        }
 
-	public static explicit operator int(CurrencyType value) {
-	    return ToInt32(value);
-	}
+        [CLSCompliant(false)]
+        public static explicit operator ulong(CurrencyType value) {
+            return ToUInt64(value);
+        }
 
-	[CLSCompliant(false)]
-	public static explicit operator uint(CurrencyType value) {
-	    return ToUInt32(value);
-	}
+        public static explicit operator float(CurrencyType value) {
+            return ToSingle(value);
+        }
 
-	public static explicit operator long(CurrencyType value) {
-	    return ToInt64(value);
-	}
+        public static explicit operator double(CurrencyType value) {
+            return ToDouble(value);
+        }
 
-	[CLSCompliant(false)]
-	public static explicit operator ulong(CurrencyType value) {
-	    return ToUInt64(value);
-	}
+        #endregion
 
-	public static explicit operator float(CurrencyType value) {
-	    return ToSingle(value);
-	}
+        #region Addition operators and methods
 
-	public static explicit operator double(CurrencyType value) {
-	    return ToDouble(value);
-	}
+        public static CurrencyType Add(CurrencyType augend, CurrencyType addend) {
+            if (augend.myState != TypeState.VALID || addend.myState != TypeState.VALID) {
+                throw new InvalidValueException(augend.myState, addend.myState);
+            }
 
-	#endregion
+            CurrencyType result;
 
-	#region Addition operators and methods
+            result.myValue = decimal.Add(augend.myValue, addend.myValue);
+            result.myState = TypeState.VALID;
+            return result;
+        }
 
-	public static CurrencyType Add(CurrencyType augend, CurrencyType addend) {
-	    if (augend.myState != TypeState.VALID || addend.myState != TypeState.VALID) {
-		throw new InvalidValueException(augend.myState, addend.myState);
-	    }
+        public static CurrencyType operator ++(CurrencyType augend) {
+            return Add(augend, One);
+        }
 
-	    CurrencyType result;
+        public static CurrencyType operator +(CurrencyType augend, CurrencyType addend) {
+            return Add(augend, addend);
+        }
 
-	    result.myValue = decimal.Add(augend.myValue, addend.myValue);
-	    result.myState = TypeState.VALID;
-	    return result;
-	}
+        public static CurrencyType operator +(CurrencyType augend) {
+            return augend;
+        }
 
-	public static CurrencyType operator ++(CurrencyType augend) {
-	    return Add(augend, One);
-	}
+        #endregion
 
-	public static CurrencyType operator +(CurrencyType augend, CurrencyType addend) {
-	    return Add(augend, addend);
-	}
+        #region Subtraction operators and methods
 
-	public static CurrencyType operator +(CurrencyType augend) {
-	    return augend;
-	}
+        public static CurrencyType Subtract(CurrencyType minuend, CurrencyType subtrahend) {
+            if (minuend.myState != TypeState.VALID || subtrahend.myState != TypeState.VALID) {
+                throw new InvalidValueException(minuend.myState, subtrahend.myState);
+            }
 
-	#endregion
+            CurrencyType result = new CurrencyType(Decimal.Subtract(minuend.myValue, subtrahend.myValue), TypeState.VALID);
 
-	#region Subtraction operators and methods
+            return result;
+        }
 
-	public static CurrencyType Subtract(CurrencyType minuend, CurrencyType subtrahend) {
-	    if (minuend.myState != TypeState.VALID || subtrahend.myState != TypeState.VALID) {
-		throw new InvalidValueException(minuend.myState, subtrahend.myState);
-	    }
+        public static CurrencyType operator --(CurrencyType minuend) {
+            return Subtract(minuend, One);
+        }
 
-	    CurrencyType result = new CurrencyType(Decimal.Subtract(minuend.myValue, subtrahend.myValue), TypeState.VALID);
+        public static CurrencyType operator -(CurrencyType minuend, CurrencyType subtrahend) {
+            return Subtract(minuend, subtrahend);
+        }
 
-	    return result;
-	}
+        #endregion
 
-	public static CurrencyType operator --(CurrencyType minuend) {
-	    return Subtract(minuend, One);
-	}
+        #region Multiplication operators and methods
 
+        public static CurrencyType Multiply(CurrencyType multiplier, CurrencyType multiplicand) {
+            if (multiplier.myState != TypeState.VALID || multiplicand.myState != TypeState.VALID) {
+                throw new InvalidValueException(multiplier.myState, multiplicand.myState);
+            }
 
-	public static CurrencyType operator -(CurrencyType minuend, CurrencyType subtrahend) {
-	    return Subtract(minuend, subtrahend);
-	}
+            CurrencyType quotient = new CurrencyType(Decimal.Multiply(multiplier.myValue, multiplicand.myValue), TypeState.VALID);
 
-	#endregion
+            return quotient;
+        }
 
-	#region Multiplication operators and methods
+        public static CurrencyType operator *(CurrencyType multiplier, CurrencyType multiplicand) {
+            return Multiply(multiplier, multiplicand);
+        }
 
-	public static CurrencyType Multiply(CurrencyType multiplier, CurrencyType multiplicand) {
-	    if (multiplier.myState != TypeState.VALID || multiplicand.myState != TypeState.VALID) {
-		throw new InvalidValueException(multiplier.myState, multiplicand.myState);
-	    }
+        #endregion
 
-	    CurrencyType quotient = new CurrencyType(Decimal.Multiply(multiplier.myValue, multiplicand.myValue), TypeState.VALID);
+        #region Division operators and methods
 
-	    return quotient;
-	}
+        public static CurrencyType Divide(CurrencyType dividend, CurrencyType divisor) {
+            if (dividend.myState != TypeState.VALID || divisor.myState != TypeState.VALID) {
+                throw new InvalidValueException(dividend.myState, divisor.myState);
+            }
 
-	public static CurrencyType operator *(CurrencyType multiplier, CurrencyType multiplicand) {
-	    return Multiply(multiplier, multiplicand);
-	}
+            CurrencyType quotient = new CurrencyType(Decimal.Divide(dividend.myValue, divisor.myValue), TypeState.VALID);
 
-	#endregion
+            return quotient;
+        }
 
-	#region Division operators and methods
+        public static CurrencyType operator /(CurrencyType dividend, CurrencyType divisor) {
+            return Divide(dividend, divisor);
+        }
 
-	public static CurrencyType Divide(CurrencyType dividend, CurrencyType divisor) {
-	    if (dividend.myState != TypeState.VALID || divisor.myState != TypeState.VALID) {
-		throw new InvalidValueException(dividend.myState, divisor.myState);
-	    }
+        #endregion
 
-	    CurrencyType quotient = new CurrencyType(Decimal.Divide(dividend.myValue, divisor.myValue), TypeState.VALID);
+        #region Modulus operators and methods
 
-	    return quotient;
-	}
+        public static CurrencyType Remainder(CurrencyType dividend, CurrencyType divisor) {
+            if (dividend.myState != TypeState.VALID || divisor.myState != TypeState.VALID) {
+                throw new InvalidValueException(dividend.myState, divisor.myState);
+            }
 
-	public static CurrencyType operator /(CurrencyType dividend, CurrencyType divisor) {
-	    return Divide(dividend, divisor);
-	}
+            CurrencyType remainder;
+            remainder.myValue = decimal.Remainder(dividend.myValue, divisor.myValue);
+            remainder.myState = TypeState.VALID;
 
-	#endregion
+            return remainder;
+        }
 
-	#region Modulus operators and methods
+        public static CurrencyType operator %(CurrencyType dividend, CurrencyType divisor) {
+            return Remainder(dividend, divisor);
+        }
 
-	public static CurrencyType Remainder(CurrencyType dividend, CurrencyType divisor) {
-	    if (dividend.myState != TypeState.VALID || divisor.myState != TypeState.VALID) {
-		throw new InvalidValueException(dividend.myState, divisor.myState);
-	    }
+        #endregion
 
-	    CurrencyType remainder;
-	    remainder.myValue = decimal.Remainder(dividend.myValue, divisor.myValue);
-	    remainder.myState = TypeState.VALID;
+        #region Equality operators and methods
 
-	    return remainder;
-	}
+        public static int Compare(CurrencyType leftHand, CurrencyType rightHand) {
+            if (leftHand.myState == TypeState.VALID && rightHand.myState == TypeState.VALID) {
+                if (leftHand.myValue < rightHand.myValue) {
+                    return -1;
+                }
 
-	public static CurrencyType operator %(CurrencyType dividend, CurrencyType divisor) {
-	    return Remainder(dividend, divisor);
-	}
+                if (leftHand.myValue == rightHand.myValue) {
+                    return 0;
+                }
 
-	#endregion
+                if (leftHand.myValue > rightHand.myValue) {
+                    return 1;
+                }
+            }
 
-	#region Equality operators and methods
+            if (leftHand.myState == TypeState.UNSET) {
+                if (rightHand.myState == TypeState.DEFAULT || rightHand.myState == TypeState.VALID) {
+                    return -1;
+                }
 
-	public static int Compare(CurrencyType leftHand, CurrencyType rightHand) {
-	    if (leftHand.myState == TypeState.VALID && rightHand.myState == TypeState.VALID) {
-		if (leftHand.myValue < rightHand.myValue) {
-		    return -1;
-		}
+                if (rightHand.myState == TypeState.UNSET) {
+                    return 0;
+                }
+            }
 
-		if (leftHand.myValue == rightHand.myValue) {
-		    return 0;
-		}
+            if (leftHand.myState == TypeState.DEFAULT) {
+                if (rightHand.myState == TypeState.DEFAULT) {
+                    return 0;
+                }
 
-		if (leftHand.myValue > rightHand.myValue) {
-		    return 1;
-		}
-	    }
+                if (rightHand.myState == TypeState.UNSET) {
+                    return -1;
+                }
 
-	    if (leftHand.myState == TypeState.UNSET) {
-		if (rightHand.myState == TypeState.DEFAULT || rightHand.myState == TypeState.VALID) {
-		    return -1;
-		}
+                return -1;
+            }
 
-		if (rightHand.myState == TypeState.UNSET) {
-		    return 0;
-		}
-	    }
+            if (leftHand.myState == TypeState.VALID) {
+                return 1;
+            }
 
-	    if (leftHand.myState == TypeState.DEFAULT) {
-		if (rightHand.myState == TypeState.DEFAULT) {
-		    return 0;
-		}
+            //should this throw an exception?
+            return 0;
+        }
 
-		if (rightHand.myState == TypeState.UNSET) {
-		    return -1;
-		}
+        public static bool operator ==(CurrencyType leftHand, CurrencyType rightHand) {
+            return Compare(leftHand, rightHand) == 0;
+        }
 
-		return -1;
-	    }
+        public static bool operator !=(CurrencyType leftHand, CurrencyType rightHand) {
+            return Compare(leftHand, rightHand) != 0;
+        }
 
-	    if (leftHand.myState == TypeState.VALID) {
-		return 1;
-	    }
+        public static bool operator <(CurrencyType leftHand, CurrencyType rightHand) {
+            return Compare(leftHand, rightHand) < 0;
+        }
 
-	    //should this throw an exception?
-	    return 0;
-	}
+        public static bool operator <=(CurrencyType leftHand, CurrencyType rightHand) {
+            return Compare(leftHand, rightHand) <= 0;
+        }
 
-	public static bool operator ==(CurrencyType leftHand, CurrencyType rightHand) {
-	    return Compare(leftHand, rightHand) == 0;
-	}
+        public static bool operator >(CurrencyType leftHand, CurrencyType rightHand) {
+            return Compare(leftHand, rightHand) > 0;
+        }
 
-	public static bool operator !=(CurrencyType leftHand, CurrencyType rightHand) {
-	    return Compare(leftHand, rightHand) != 0;
-	}
+        public static bool operator >=(CurrencyType leftHand, CurrencyType rightHand) {
+            return Compare(leftHand, rightHand) >= 0;
+        }
 
-	public static bool operator <(CurrencyType leftHand, CurrencyType rightHand) {
-	    return Compare(leftHand, rightHand) < 0;
-	}
+        #endregion
 
-	public static bool operator <=(CurrencyType leftHand, CurrencyType rightHand) {
-	    return Compare(leftHand, rightHand) <= 0;
-	}
+        #region IConvertible and other conversions
 
-	public static bool operator >(CurrencyType leftHand, CurrencyType rightHand) {
-	    return Compare(leftHand, rightHand) > 0;
-	}
+        [CLSCompliant(false)]
+        public sbyte ToSByte() {
+            return CurrencyType.ToSByte(this);
+        }
 
-	public static bool operator >=(CurrencyType leftHand, CurrencyType rightHand) {
-	    return Compare(leftHand, rightHand) >= 0;
-	}
+        public byte ToByte() {
+            return CurrencyType.ToByte(this);
+        }
 
-	#endregion
+        public short ToInt16() {
+            return CurrencyType.ToInt16(this);
+        }
 
-	#region IConvertible and other conversions
+        [CLSCompliant(false)]
+        public ushort ToUInt16() {
+            return CurrencyType.ToUInt16(this);
+        }
 
+        public int ToInt32() {
+            return CurrencyType.ToInt32(this);
+        }
 
-	[CLSCompliant(false)]
-	public sbyte ToSByte() {
-	    return CurrencyType.ToSByte(this);
-	}
+        [CLSCompliant(false)]
+        public uint ToUInt32() {
+            return CurrencyType.ToUInt32(this);
+        }
 
-	public byte ToByte() {
-	    return CurrencyType.ToByte(this);
-	}
+        public long ToInt64() {
+            return CurrencyType.ToInt64(this);
+        }
 
-	public short ToInt16() {
-	    return CurrencyType.ToInt16(this);
-	}
+        [CLSCompliant(false)]
+        public ulong ToUInt64() {
+            return CurrencyType.ToUInt64(this);
+        }
 
-	[CLSCompliant(false)]
-	public ushort ToUInt16() {
-	    return CurrencyType.ToUInt16(this);
-	}
+        public float ToSingle() {
+            return CurrencyType.ToSingle(this);
+        }
 
-	public int ToInt32() {
-	    return CurrencyType.ToInt32(this);
-	}
+        public double ToDouble() {
+            return CurrencyType.ToDouble(this);
+        }
 
-	[CLSCompliant(false)]
-	public uint ToUInt32() {
-	    return CurrencyType.ToUInt32(this);
-	}
+        #endregion
 
-	public long ToInt64() {
-	    return CurrencyType.ToInt64(this);
-	}
+        #region Object Support and other stuff
 
-	[CLSCompliant(false)]
-	public ulong ToUInt64() {
-	    return CurrencyType.ToUInt64(this);
-	}
+        int IComparable.CompareTo(Object value) {
+            if (!(value is CurrencyType)) {
+                throw new InvalidTypeException("CurrencyType");
+            }
 
-	public float ToSingle() {
-	    return CurrencyType.ToSingle(this);
-	}
+            if (value == null) {
+                throw new InvalidArgumentException("value");
+            }
 
-	public double ToDouble() {
-	    return CurrencyType.ToDouble(this);
-	}
+            CurrencyType compareTo = (CurrencyType)value;
 
-	#endregion
+            return Compare(this, compareTo);
+        }
 
-	#region Object Support and other stuff
+        public int CompareTo(CurrencyType value) {
+            return Compare(this, value);
+        }
 
-	int IComparable.CompareTo(Object value) {
-	    if (!(value is CurrencyType)) {
-		throw new InvalidTypeException("CurrencyType");
-	    }
+        public override bool Equals(Object value) {
+            if (value is CurrencyType) {
+                return Compare(this, (CurrencyType)value) == 0;
+            }
 
-	    if (value == null) {
-		throw new InvalidArgumentException("value");
-	    }
+            return false;
+        }
 
-	    CurrencyType compareTo = (CurrencyType) value;
+        public static bool Equals(CurrencyType leftHand, CurrencyType rightHand) {
+            return Compare(leftHand, rightHand) == 0;
+        }
 
-	    return Compare(this, compareTo);
-	}
+        public override int GetHashCode() {
+            return myValue.GetHashCode();
+        }
 
-	public int CompareTo(CurrencyType value) {
-	    return Compare(this, value);
-	}
+        public static int[] GetBits(CurrencyType value) {
+            if (value.myState != TypeState.VALID) {
+                throw new InvalidValueException(value.myState);
+            }
 
-	public override bool Equals(Object value) {
-	    if (value is CurrencyType) {
-		return Compare(this, (CurrencyType) value) == 0;
-	    }
+            return decimal.GetBits(value.myValue);
+            //	    return new int[] {value.myValue.lo, value.myValue.mid, value.myValue.hi, value.myValue.flags};
+        }
 
-	    return false;
-	}
+        public TypeCode GetTypeCode() {
+            return TypeCode.Decimal;
+        }
 
-	public static bool Equals(CurrencyType leftHand, CurrencyType rightHand) {
-	    return Compare(leftHand, rightHand) == 0;
-	}
+        #endregion
 
-	public override int GetHashCode() {
-	    return myValue.GetHashCode();
-	}
+        public Decimal ToDecimal() {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
+            return myValue;
+        }
 
-	public static int[] GetBits(CurrencyType value) {
-	    if (value.myState != TypeState.VALID) {
-		throw new InvalidValueException(value.myState);
-	    }
-
-	    return decimal.GetBits(value.myValue);
-	    //	    return new int[] {value.myValue.lo, value.myValue.mid, value.myValue.hi, value.myValue.flags};
-	}
-
-	public TypeCode GetTypeCode() {
-	    return TypeCode.Decimal;
-	}
-
-	#endregion
-
-	public Decimal ToDecimal() {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
-
-	    return myValue;
-	}
- 
         [SecurityPermissionAttribute(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
         CurrencyType(SerializationInfo info, StreamingContext context) {
             myValue = (Decimal)info.GetValue("myValue", typeof(Decimal));

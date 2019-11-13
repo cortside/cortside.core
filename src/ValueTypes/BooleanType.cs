@@ -1,193 +1,189 @@
 using System;
-using System.Collections;
 using System.Runtime.Serialization;
 using System.Security.Permissions;
 
 namespace Spring2.Core.Types {
-    [Serializable()] 
+    [Serializable()]
     public struct BooleanType : IComparable, IDataType, ISerializable {
-	
-	private Boolean myValue;
-	private TypeState myState;
 
-	private const bool True = true;
-	private const bool False = false;
+        private Boolean myValue;
+        private TypeState myState;
 
-	public static string TrueString = Boolean.TrueString;
-	public static string FalseString = Boolean.FalseString;
+        private const bool True = true;
+        private const bool False = false;
 
-	public static readonly BooleanType TRUE = new BooleanType(true);
-	public static readonly BooleanType FALSE = new BooleanType(false);
+        public static string TrueString = Boolean.TrueString;
+        public static string FalseString = Boolean.FalseString;
 
-	public static readonly BooleanType DEFAULT = new BooleanType(TypeState.DEFAULT);
-	public static readonly BooleanType UNSET   = new BooleanType(TypeState.UNSET);
+        public static readonly BooleanType TRUE = new BooleanType(true);
+        public static readonly BooleanType FALSE = new BooleanType(false);
 
-	#region State management
-	public bool IsValid {
-	    get {return myState == TypeState.VALID;}
-	}
+        public static readonly BooleanType DEFAULT = new BooleanType(TypeState.DEFAULT);
+        public static readonly BooleanType UNSET = new BooleanType(TypeState.UNSET);
 
-	public bool IsDefault {
-	    get {return myState == TypeState.DEFAULT;}
-	}
+        #region State management
+        public bool IsValid {
+            get { return myState == TypeState.VALID; }
+        }
 
-	public bool IsUnset {
-	    get {return myState == TypeState.UNSET;}
-	}
-	#endregion
+        public bool IsDefault {
+            get { return myState == TypeState.DEFAULT; }
+        }
 
-	#region Constructors
-	private BooleanType(TypeState state) {
-	    myValue = false;
-	    myState = state;
-	}
+        public bool IsUnset {
+            get { return myState == TypeState.UNSET; }
+        }
+        #endregion
 
-	public BooleanType(bool value) {
-	    myValue = value;
-	    myState = TypeState.VALID;
-	}
-	#endregion
+        #region Constructors
+        private BooleanType(TypeState state) {
+            myValue = false;
+            myState = state;
+        }
 
-	#region ToString and Parsing
+        public BooleanType(bool value) {
+            myValue = value;
+            myState = TypeState.VALID;
+        }
+        #endregion
 
-	public override String ToString() {
-	    return IsValid ? this.myValue.ToString() : myState.ToString();
-	}
+        #region ToString and Parsing
 
-	public String Display() {
-	    return IsValid ? ToString() : String.Empty;
-	}
+        public override String ToString() {
+            return IsValid ? this.myValue.ToString() : myState.ToString();
+        }
 
-	public static BooleanType Parse(String value) {
-	    bool boolVal = bool.Parse(value);
-	    return new BooleanType(boolVal);
-	}
+        public String Display() {
+            return IsValid ? ToString() : String.Empty;
+        }
 
-	#endregion
+        public static BooleanType Parse(String value) {
+            bool boolVal = bool.Parse(value);
+            return new BooleanType(boolVal);
+        }
 
-	#region IConvertible and other conversions
-	
-	int IComparable.CompareTo(Object value) {
-	    if (!(value is BooleanType)) {
-		throw new InvalidTypeException("BooleanType");
-	    }
+        #endregion
 
-	    if (value == null) {
-		throw new InvalidArgumentException("value");
-	    }
+        #region IConvertible and other conversions
 
-	    BooleanType compareTo = (BooleanType) value;
+        int IComparable.CompareTo(Object value) {
+            if (!(value is BooleanType)) {
+                throw new InvalidTypeException("BooleanType");
+            }
 
-	    if (IsValid && compareTo.IsValid) {
-		if (myValue == compareTo.myValue) {
-		    return 0;
-		} else if (myValue == false) {
-		    return -1;
-		}
+            if (value == null) {
+                throw new InvalidArgumentException("value");
+            }
 
-		return 1;
-	    }
+            BooleanType compareTo = (BooleanType)value;
 
-	    if (myState == TypeState.UNSET) {
-		if (compareTo.myState == TypeState.DEFAULT || compareTo.myState == TypeState.VALID) {
-		    return -1;
-		}
+            if (IsValid && compareTo.IsValid) {
+                if (myValue == compareTo.myValue) {
+                    return 0;
+                } else if (myValue == false) {
+                    return -1;
+                }
 
-		if (compareTo.myState == TypeState.UNSET) {
-		    return 0;
-		}
-	    }
+                return 1;
+            }
 
-	    if (compareTo.myState == TypeState.DEFAULT) {
-		if (myState == TypeState.DEFAULT) {
-		    return 0;
-		}
+            if (myState == TypeState.UNSET) {
+                if (compareTo.myState == TypeState.DEFAULT || compareTo.myState == TypeState.VALID) {
+                    return -1;
+                }
 
-		if (myState == TypeState.UNSET) {
-		    return 1;
-		}
+                if (compareTo.myState == TypeState.UNSET) {
+                    return 0;
+                }
+            }
 
-		return -1;
-	    }
+            if (compareTo.myState == TypeState.DEFAULT) {
+                if (myState == TypeState.DEFAULT) {
+                    return 0;
+                }
 
-	    //should this throw an exception?
-	    return 0;
-	}
+                if (myState == TypeState.UNSET) {
+                    return 1;
+                }
 
-	
-	public bool ToBoolean(IFormatProvider provider) {
-	    if (myState != TypeState.VALID) {
-		throw new InvalidValueException(myState);
-	    }
+                return -1;
+            }
 
-	    return myValue;
-	}
-	#endregion
+            //should this throw an exception?
+            return 0;
+        }
 
-	#region Object support methods
-	//what to do here?? we aren't really a string
-	public TypeCode GetTypeCode() {
-	    return TypeCode.Boolean;
-	}
+        public bool ToBoolean(IFormatProvider provider) {
+            if (myState != TypeState.VALID) {
+                throw new InvalidValueException(myState);
+            }
 
-	public override int GetHashCode() {
-	    if (myValue) {
-		return 1;
-	    }
+            return myValue;
+        }
+        #endregion
 
-	    return 0;
-	}
-	#endregion
+        #region Object support methods
+        //what to do here?? we aren't really a string
+        public TypeCode GetTypeCode() {
+            return TypeCode.Boolean;
+        }
 
-	public static BooleanType GetInstance(Boolean value) {
-	    return value ? TRUE : FALSE;
-	}
+        public override int GetHashCode() {
+            if (myValue) {
+                return 1;
+            }
 
-	public static BooleanType GetInstance(Int32 value) {
-	    if (value == 1) {
-		return TRUE;
-	    }
-	    if (value == 0) {
-		return FALSE;
-	    }
-	    return UNSET;
-	}
+            return 0;
+        }
+        #endregion
 
-	public static BooleanType GetInstance(String value) {
-	    if (value == "Y") {
-		return TRUE;
-	    }
-	    if (value == "N") {
-		return FALSE;
-	    }
-	    return UNSET;
-	}
+        public static BooleanType GetInstance(Boolean value) {
+            return value ? TRUE : FALSE;
+        }
 
-	public Boolean ToBoolean() {
-	    if (myState == TypeState.VALID) {
-		return myValue;
-	    } else {
-		throw new InvalidCastException("UNSET and DEFAULT cannot be cast to a Boolean.");
-	    }
-	}
+        public static BooleanType GetInstance(Int32 value) {
+            if (value == 1) {
+                return TRUE;
+            }
+            if (value == 0) {
+                return FALSE;
+            }
+            return UNSET;
+        }
 
-	public Boolean IsTrue {
-	    get {
-		return this.Equals(TRUE);
-	    }
-	}
+        public static BooleanType GetInstance(String value) {
+            if (value == "Y") {
+                return TRUE;
+            }
+            if (value == "N") {
+                return FALSE;
+            }
+            return UNSET;
+        }
 
-	public Boolean IsFalse {
-	    get {
-		return this.Equals(FALSE);
-	    }
-	}
-    	
-	public static implicit operator BooleanType(Boolean castFrom) {
-	    return new BooleanType(castFrom);
-	}
+        public Boolean ToBoolean() {
+            if (myState == TypeState.VALID) {
+                return myValue;
+            } else {
+                throw new InvalidCastException("UNSET and DEFAULT cannot be cast to a Boolean.");
+            }
+        }
 
+        public Boolean IsTrue {
+            get {
+                return this.Equals(TRUE);
+            }
+        }
 
+        public Boolean IsFalse {
+            get {
+                return this.Equals(FALSE);
+            }
+        }
+
+        public static implicit operator BooleanType(Boolean castFrom) {
+            return new BooleanType(castFrom);
+        }
 
         [SecurityPermissionAttribute(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context) {
@@ -203,7 +199,6 @@ namespace Spring2.Core.Types {
         }
     }
 
-    
     [Serializable]
     public struct BooleanType_DEFAULT : IObjectReference {
         public object GetRealObject(StreamingContext context) {

@@ -1,7 +1,7 @@
 using System;
 
 namespace Spring2.Core.DAO {
-	public interface IWhere {
-		String FormatSql();
-	}
+    public interface IWhere {
+        String FormatSql();
+    }
 }

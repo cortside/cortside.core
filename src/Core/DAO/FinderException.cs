@@ -6,8 +6,8 @@ namespace Spring2.Core.DAO {
     /// Exception created when a finder returns no rows.
     /// </summary>
     public class FinderException : DaoException {
-	public FinderException() {}
+        public FinderException() { }
 
-	public FinderException (String message) : base(message) {}
+        public FinderException(String message) : base(message) { }
     }
 }

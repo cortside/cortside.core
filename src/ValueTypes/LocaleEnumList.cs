@@ -7,125 +7,110 @@ namespace Spring2.Core.Types {
     /// <summary>
     /// LocaleEnum generic collection
     /// </summary>
-	[Serializable]
+    [Serializable]
     public class LocaleEnumList : System.Collections.CollectionBase, ISerializable {
-	
-	
-	public static readonly LocaleEnumList UNSET = new LocaleEnumList(true);
-	
-	public static readonly LocaleEnumList DEFAULT = new LocaleEnumList(true);
 
-	
-	private Boolean immutable = false;
-	
-	
-	private LocaleEnumList (Boolean immutable) {
-	        this.immutable = immutable;
-	}
+        public static readonly LocaleEnumList UNSET = new LocaleEnumList(true);
 
-	
-	public LocaleEnumList() {
-	}
+        public static readonly LocaleEnumList DEFAULT = new LocaleEnumList(true);
 
-	// Indexer implementation.
-	
-	public LocaleEnum this[int index] {
-	    get { return (LocaleEnum) List[index]; }
-	    set { 
-		if (!immutable) {
-		    List[index] = value;
-		} else {
-		    throw new System.Data.ReadOnlyException();
-		}
-	    }
-	}
+        private readonly Boolean immutable = false;
 
-	
-	public void Add(LocaleEnum value) {
-	    if (!immutable) {
-		List.Add(value);
-	    } else {
-		throw new System.Data.ReadOnlyException();
-	    }
-	}
+        private LocaleEnumList(Boolean immutable) {
+            this.immutable = immutable;
+        }
 
-	
-	public Boolean Contains(LocaleEnum value) {
-	    return List.Contains(value);
-	}
-	
-	
-	public Int32 IndexOf(LocaleEnum value) {
-	    return List.IndexOf(value);
-	}
-	
-	
-	public void Insert(Int32 index, LocaleEnum value) {
-	    if (!immutable) {
-	    	List.Insert(index, value);
-	    } else {
-		throw new System.Data.ReadOnlyException();
-	    }
-	}
+        public LocaleEnumList() {
+        }
 
-	
-	public void Remove(int index) {
-	    if (!immutable) {
-		if (index > Count - 1 || index < 0) {
-		    throw new IndexOutOfRangeException();
-		} else {
-		    List.RemoveAt(index); 
-		}
-	    } else {
-		throw new System.Data.ReadOnlyException();
-	    }
-	}
+        // Indexer implementation.
 
-	
-	public void Remove(LocaleEnum value) {
-	    if (!immutable) {
-		List.Remove(value); 
-	    } else {
-		throw new System.Data.ReadOnlyException();
-	    }
-	}
+        public LocaleEnum this[int index] {
+            get { return (LocaleEnum)List[index]; }
+            set {
+                if (!immutable) {
+                    List[index] = value;
+                } else {
+                    throw new System.Data.ReadOnlyException();
+                }
+            }
+        }
 
-	
-	public void AddRange(System.Collections.IList list) {
-	    foreach(Object o in list) {
-		if (o is LocaleEnum) {
-		    Add((LocaleEnum)o);
-		} else {
-		    throw new System.InvalidCastException("object in list could not be cast to LocaleEnum");
-		}
-	    }
-	}
-	
-	
-	public Boolean IsDefault {
-	    get { return Object.ReferenceEquals(this, DEFAULT); }
-	}
+        public void Add(LocaleEnum value) {
+            if (!immutable) {
+                List.Add(value);
+            } else {
+                throw new System.Data.ReadOnlyException();
+            }
+        }
 
-	
-	public Boolean IsUnset {
-	    get { return Object.ReferenceEquals(this, UNSET); }
-	}
-	
-	
-	public Boolean IsValid {
-	    get {
-		return !(IsDefault || IsUnset);
-	    }
-	}
+        public Boolean Contains(LocaleEnum value) {
+            return List.Contains(value);
+        }
 
+        public Int32 IndexOf(LocaleEnum value) {
+            return List.IndexOf(value);
+        }
+
+        public void Insert(Int32 index, LocaleEnum value) {
+            if (!immutable) {
+                List.Insert(index, value);
+            } else {
+                throw new System.Data.ReadOnlyException();
+            }
+        }
+
+        public void Remove(int index) {
+            if (!immutable) {
+                if (index > Count - 1 || index < 0) {
+                    throw new IndexOutOfRangeException();
+                } else {
+                    List.RemoveAt(index);
+                }
+            } else {
+                throw new System.Data.ReadOnlyException();
+            }
+        }
+
+        public void Remove(LocaleEnum value) {
+            if (!immutable) {
+                List.Remove(value);
+            } else {
+                throw new System.Data.ReadOnlyException();
+            }
+        }
+
+        public void AddRange(System.Collections.IList list) {
+            foreach (Object o in list) {
+                if (o is LocaleEnum) {
+                    Add((LocaleEnum)o);
+                } else {
+                    throw new System.InvalidCastException("object in list could not be cast to LocaleEnum");
+                }
+            }
+        }
+
+        public Boolean IsDefault {
+            get { return Object.ReferenceEquals(this, DEFAULT); }
+        }
+
+        public Boolean IsUnset {
+            get { return Object.ReferenceEquals(this, UNSET); }
+        }
+
+        public Boolean IsValid {
+            get {
+                return !(IsDefault || IsUnset);
+            }
+        }
 
         [SecurityPermissionAttribute(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
         LocaleEnumList(SerializationInfo info, StreamingContext context) {
             immutable = (Boolean)info.GetValue("immutable", typeof(Boolean));
             int listCount = (int)info.GetValue("listCount", typeof(int));
-			for(int i = 0;i < listCount; i++) {
-				List.Add((LocaleEnum)info.GetValue("v" + i.ToString(), typeof(LocaleEnum)));
-			}
+            for (int i = 0; i < listCount; i++) {
+                List.Add((LocaleEnum)info.GetValue("v" + i.ToString(), typeof(LocaleEnum)));
+            }
         }
 
         [SecurityPermissionAttribute(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
@@ -137,10 +122,10 @@ namespace Spring2.Core.Types {
             } else {
                 info.SetType(typeof(LocaleEnumList));
                 info.AddValue("immutable", immutable);
-				info.AddValue("listCount", List.Count);
-				for(int i = 0;i < List.Count; i++) {
-					info.AddValue("v" + i.ToString(), List[i]);
-				}
+                info.AddValue("listCount", List.Count);
+                for (int i = 0; i < List.Count; i++) {
+                    info.AddValue("v" + i.ToString(), List[i]);
+                }
             }
         }
 

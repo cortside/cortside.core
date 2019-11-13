@@ -47,31 +47,31 @@ namespace Spring2.Core.DAO {
     /// Class to assist in managing connection lifetimes inside scopes on a particular thread.
     /// </summary>
     sealed public class DbConnectionScope : IDisposable {
-#region class fields
-	[ThreadStatic()]
-	private static DbConnectionScope __currentScope = null;      // Scope that is currently active on this thread
-	private static Object __nullKey = new Object();   // used to allow null as a key
-#endregion
+        #region class fields
+        [ThreadStatic()]
+        private static DbConnectionScope __currentScope = null;      // Scope that is currently active on this thread
+        private static readonly Object __nullKey = new Object();   // used to allow null as a key
+        #endregion
 
-#region instance fields
-	private DbConnectionScope _priorScope;    // previous scope in stack of scopes on this thread
-	private Dictionary<object, DbConnection> _connections;   // set of connections contained by this scope.
-        private bool                                _isDisposed;   // 
+        #region instance fields
+        private DbConnectionScope _priorScope;    // previous scope in stack of scopes on this thread
+        private Dictionary<object, DbConnection> _connections;   // set of connections contained by this scope.
+        private bool _isDisposed;   // 
 
-	private Guid guid = Guid.NewGuid();
+        private Guid guid = Guid.NewGuid();
 
-#endregion
+        #endregion
 
-#region public class methods and properties
-	/// <summary>
-	/// Obtain the currently active connection scope
-	/// </summary>
-	public static DbConnectionScope Current {
-	    get {
-		return __currentScope;
-	    }
-	}
-#endregion
+        #region public class methods and properties
+        /// <summary>
+        /// Obtain the currently active connection scope
+        /// </summary>
+        public static DbConnectionScope Current {
+            get {
+                return __currentScope;
+            }
+        }
+        #endregion
 
         #region public instance methods and properties
         /// <summary>
@@ -89,13 +89,12 @@ namespace Spring2.Core.DAO {
 
             bool mustPush;      // do we need to change __currentScope?
             bool pushNull;      // should we set __currentScope to NULL or this?
-            switch(option) {
+            switch (option) {
                 case DbConnectionScopeOption.Required:
                     if (null == __currentScope) {
                         mustPush = true;
                         pushNull = false;
-                    }
-                    else {
+                    } else {
                         mustPush = false;
                         pushNull = false;
                     }
@@ -117,9 +116,9 @@ namespace Spring2.Core.DAO {
             if (mustPush) {
                 // only bother allocating dictionary if we're going to push
 
-		// TODO: added us of "this" crap to see if I can figure out why I still have a connection
+                // TODO: added us of "this" crap to see if I can figure out why I still have a connection
                 this._connections = new Dictionary<object, DbConnection>();
-		this._connections.Clear();
+                this._connections.Clear();
 
                 // Devnote:  Order of initial assignment is important in cases of failure!
                 //  _priorScope first makes sure we know who we need to restore
@@ -130,80 +129,78 @@ namespace Spring2.Core.DAO {
                 _isDisposed = false;
                 if (pushNull) {
                     __currentScope = null;
-                }
-                else {
+                } else {
                     __currentScope = this;
 
-		    // TODO: added this crap to see if I can figure out why I still have a connection
-		    __currentScope._connections = new Dictionary<object, DbConnection>();
-		    __currentScope._connections.Clear();
+                    // TODO: added this crap to see if I can figure out why I still have a connection
+                    __currentScope._connections = new Dictionary<object, DbConnection>();
+                    __currentScope._connections.Clear();
 
-		    this._connections = new Dictionary<object, DbConnection>();
-		    this._connections.Clear();
+                    this._connections = new Dictionary<object, DbConnection>();
+                    this._connections.Clear();
 
                 }
             }
         }
 
+        private DbConnectionScope(Boolean foo) {
+        }
 
-	private DbConnectionScope(Boolean foo) {
-	}
+        public static DbConnectionScope CreateNew() {
+            DbConnectionScopeOption option = DbConnectionScopeOption.Required;
 
-	public static DbConnectionScope CreateNew() {
-	    DbConnectionScopeOption option = DbConnectionScopeOption.Required;
+            bool mustPush;      // do we need to change __currentScope?
+            bool pushNull;      // should we set __currentScope to NULL or this?
+            switch (option) {
+                case DbConnectionScopeOption.Required:
+                    if (null == __currentScope) {
+                        mustPush = true;
+                        pushNull = false;
+                    } else {
+                        mustPush = false;
+                        pushNull = false;
+                    }
+                    break;
+                case DbConnectionScopeOption.RequiresNew:
+                    mustPush = true;
+                    pushNull = false;
+                    break;
 
-	    bool mustPush;      // do we need to change __currentScope?
-	    bool pushNull;      // should we set __currentScope to NULL or this?
-	    switch (option) {
-		case DbConnectionScopeOption.Required:
-		    if (null == __currentScope) {
-			mustPush = true;
-			pushNull = false;
-		    } else {
-			mustPush = false;
-			pushNull = false;
-		    }
-		    break;
-		case DbConnectionScopeOption.RequiresNew:
-		    mustPush = true;
-		    pushNull = false;
-		    break;
+                case DbConnectionScopeOption.Suppress:
+                    mustPush = true;
+                    pushNull = true;
+                    break;
 
-		case DbConnectionScopeOption.Suppress:
-		    mustPush = true;
-		    pushNull = true;
-		    break;
+                default:
+                    throw new ArgumentOutOfRangeException("option");
+            }
 
-		default:
-		    throw new ArgumentOutOfRangeException("option");
-	    }
+            if (mustPush) {
+                DbConnectionScope scope = new DbConnectionScope(true);
+                scope._isDisposed = true;  // short circuit Dispose until we're properly set up
 
-	    if (mustPush) {
-		DbConnectionScope scope = new DbConnectionScope(true);
-		scope._isDisposed = true;  // short circuit Dispose until we're properly set up
+                // only bother allocating dictionary if we're going to push
 
-		// only bother allocating dictionary if we're going to push
+                // TODO: added us of "this" crap to see if I can figure out why I still have a connection
+                scope._connections = new Dictionary<object, DbConnection>();
+                scope._connections.Clear();
 
-		// TODO: added us of "this" crap to see if I can figure out why I still have a connection
-		scope._connections = new Dictionary<object, DbConnection>();
-		scope._connections.Clear();
-
-		// Devnote:  Order of initial assignment is important in cases of failure!
-		//  _priorScope first makes sure we know who we need to restore
-		//  _isDisposed second, to make sure we no-op dispose until we're as close to
-		//      correct setup as possible (i.e. all other instance fields set prior to _isDisposed = false)
-		//  __currentScope last, to make sure the thread static only holds validly set up objects
-		scope._priorScope = __currentScope;
-		scope._isDisposed = false;
-		if (pushNull) {
-		    __currentScope = null;
-		} else {
-		    DbConnectionScope.__currentScope = scope;
-		}
-		return scope;
-	    }
-	    return null;
-	}
+                // Devnote:  Order of initial assignment is important in cases of failure!
+                //  _priorScope first makes sure we know who we need to restore
+                //  _isDisposed second, to make sure we no-op dispose until we're as close to
+                //      correct setup as possible (i.e. all other instance fields set prior to _isDisposed = false)
+                //  __currentScope last, to make sure the thread static only holds validly set up objects
+                scope._priorScope = __currentScope;
+                scope._isDisposed = false;
+                if (pushNull) {
+                    __currentScope = null;
+                } else {
+                    DbConnectionScope.__currentScope = scope;
+                }
+                return scope;
+            }
+            return null;
+        }
 
         /// <summary>
         /// Convenience constructor to add an initial connection
@@ -258,16 +255,16 @@ namespace Spring2.Core.DAO {
                 }
 
                 // secondly, make sure our internal state is set to "Disposed"
-		List<DbConnection> connections = new List<DbConnection>();
-		connections.AddRange(_connections.Values);
+                List<DbConnection> connections = new List<DbConnection>();
+                connections.AddRange(_connections.Values);
 
-		// TODO: added this crap to see if I can figure out why I still have a connection
-		_connections.Clear();
-		_connections = null;
+                // TODO: added this crap to see if I can figure out why I still have a connection
+                _connections.Clear();
+                _connections = null;
 
                 // Lastly, clean up the connections we own
                 if (null != connections) {
-                    foreach(DbConnection connection in connections) {
+                    foreach (DbConnection connection in connections) {
                         connection.Dispose();
                     }
                 }
@@ -290,12 +287,11 @@ namespace Spring2.Core.DAO {
             if (null == key) {
                 key = __nullKey;
             }
-            
+
             if (!_connections.TryGetValue(key, out returnValue)) {
                 if (searchPriorScopes && null != _priorScope) {
                     returnValue = _priorScope.GetConnection(key, searchPriorScopes);
-                }
-                else {
+                } else {
                     returnValue = _connections[key];  // we alread know it's not there so force the exception
                 }
             }
@@ -328,8 +324,7 @@ namespace Spring2.Core.DAO {
             // allow null-ref as key
             if (null == connectionString) {
                 key = __nullKey;
-            }
-            else {
+            } else {
                 key = connectionString;
             }
 
@@ -407,6 +402,6 @@ namespace Spring2.Core.DAO {
             }
         }
 
-       #endregion
+        #endregion
     }
 }

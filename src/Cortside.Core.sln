@@ -11,6 +11,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cortside.Core.Reporting", "Reporting\Cortside.Core.Reporting.csproj", "{53A91AEF-E24F-41E9-AF8D-743F291BEEE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{124F0622-D0DD-47C0-A790-775E8BA3DA76}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cortside.Core.Test", "Test\Cortside.Core.Test.csproj", "{A67DCBD3-90C1-49EF-BBD4-AEE42E3670B3}"
 EndProject

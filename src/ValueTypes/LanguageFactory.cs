@@ -5,10 +5,10 @@ namespace Spring2.Core.Types {
     /// Summary description for LanguageFactory.
     /// </summary>
     public class LanguageFactory : ILanguageFactory {
-	public LanguageFactory() {}
+        public LanguageFactory() { }
 
-	public ILanguage GetLanguage(String language) {
-	    return LanguageEnum.GetInstance(language);
-	}
+        public ILanguage GetLanguage(String language) {
+            return LanguageEnum.GetInstance(language);
+        }
     }
 }

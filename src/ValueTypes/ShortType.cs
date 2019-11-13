@@ -5,660 +5,656 @@ using System.Security.Permissions;
 namespace Spring2.Core.Types {
     [System.Serializable, System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
     public struct ShortType : System.IComparable, System.IFormattable, IDataType, ISerializable {
-	private System.Int16 myValue;
-	private TypeState    myState;
-
-	public const short MaxValue = System.Int16.MaxValue;
-	public const short MinValue = System.Int16.MinValue;
-
-	public static readonly ShortType DEFAULT = new ShortType(TypeState.DEFAULT);
-	public static readonly ShortType UNSET   = new ShortType(TypeState.UNSET);
-
-	#region	State management
-	public bool IsValid {
-	    get	{return myState	== TypeState.VALID;}
-	}
-
-	public bool IsDefault {
-	    get	{return myState	== TypeState.DEFAULT;}
-	}
-
-	public bool IsUnset {
-	    get	{return myState	== TypeState.UNSET;}
-	}
+        private System.Int16 myValue;
+        private TypeState myState;
 
-	#endregion
+        public const short MaxValue = System.Int16.MaxValue;
+        public const short MinValue = System.Int16.MinValue;
 
-	#region Constructors
-	private ShortType(TypeState state) {
-	    myValue = 0;
-	    myState = state;
-	}
-
-	public ShortType(byte value) {
-	    myValue = (short) value;
-	    myState = TypeState.VALID;
-	}
+        public static readonly ShortType DEFAULT = new ShortType(TypeState.DEFAULT);
+        public static readonly ShortType UNSET = new ShortType(TypeState.UNSET);
 
-	public ShortType(short value) {
-	    myValue = value;
-	    myState = TypeState.VALID;
-	}
+        #region	State management
+        public bool IsValid {
+            get { return myState == TypeState.VALID; }
+        }
 
-	private ShortType(ShortType value) {
-	    myValue = value.myValue;
-	    myState = value.myState;
-	}
-	#endregion
+        public bool IsDefault {
+            get { return myState == TypeState.DEFAULT; }
+        }
 
-	#region ToString and Parsing
-	public override String ToString() {
-	    return IsValid ? this.myValue.ToString() : myState.ToString();
-	}
+        public bool IsUnset {
+            get { return myState == TypeState.UNSET; }
+        }
 
-	public String ToString(String format) {
-	    return IsValid ? this.myValue.ToString(format) : myState.ToString();
-	}
+        #endregion
 
-	public String ToString(IFormatProvider provider) {
-	    return IsValid ? this.myValue.ToString(provider) : myState.ToString();
-	}
-         
-	public String ToString(String format, IFormatProvider provider) {
-	    return IsValid ? this.myValue.ToString(format, provider) : myState.ToString();
-	}
+        #region Constructors
+        private ShortType(TypeState state) {
+            myValue = 0;
+            myState = state;
+        }
 
+        public ShortType(byte value) {
+            myValue = value;
+            myState = TypeState.VALID;
+        }
 
-	public String Display() {
-	    return IsValid ? ToString() : String.Empty;
-	}
+        public ShortType(short value) {
+            myValue = value;
+            myState = TypeState.VALID;
+        }
 
-	public String Display(String format) {
-	    return IsValid ? ToString(format) : String.Empty;
-	}
+        private ShortType(ShortType value) {
+            myValue = value.myValue;
+            myState = value.myState;
+        }
+        #endregion
 
-	public String Display(IFormatProvider provider) {
-	    return IsValid ? ToString(provider) : String.Empty;
-	}
-         
-	public String Display(String format, IFormatProvider provider) {
-	    return IsValid ? ToString(format, provider) : String.Empty;
-	}
+        #region ToString and Parsing
+        public override String ToString() {
+            return IsValid ? this.myValue.ToString() : myState.ToString();
+        }
 
-	public static ShortType Parse(System.String parseString) {    
-	    if (parseString == null) {
-		throw new InvalidArgumentException("parseString");
-	    }
+        public String ToString(String format) {
+            return IsValid ? this.myValue.ToString(format) : myState.ToString();
+        }
 
-	    ShortType parsedInt32;
+        public String ToString(IFormatProvider provider) {
+            return IsValid ? this.myValue.ToString(provider) : myState.ToString();
+        }
 
-	    parsedInt32.myValue = System.Int16.Parse(parseString);
-	    parsedInt32.myState = TypeState.VALID;
+        public String ToString(String format, IFormatProvider provider) {
+            return IsValid ? this.myValue.ToString(format, provider) : myState.ToString();
+        }
 
-	    return parsedInt32;
-	}
-   
-	public static ShortType Parse(System.String parseString, System.Globalization.NumberStyles style) {
-	    if (parseString == null) {
-		throw new InvalidArgumentException("parseString");
-	    }
+        public String Display() {
+            return IsValid ? ToString() : String.Empty;
+        }
 
-	    ShortType parsedInt32;
+        public String Display(String format) {
+            return IsValid ? ToString(format) : String.Empty;
+        }
 
-	    parsedInt32.myValue = System.Int16.Parse(parseString, style);
-	    parsedInt32.myState = TypeState.VALID;
+        public String Display(IFormatProvider provider) {
+            return IsValid ? ToString(provider) : String.Empty;
+        }
 
-	    return parsedInt32;
-	}
+        public String Display(String format, IFormatProvider provider) {
+            return IsValid ? ToString(format, provider) : String.Empty;
+        }
 
+        public static ShortType Parse(System.String parseString) {
+            if (parseString == null) {
+                throw new InvalidArgumentException("parseString");
+            }
 
-	public static ShortType Parse(System.String parseString, System.IFormatProvider formatProvider) {
-	    if (parseString == null) {
-		throw new InvalidArgumentException("parseString");
-	    }
+            ShortType parsedInt32;
 
-	    ShortType parsedInt32;
+            parsedInt32.myValue = System.Int16.Parse(parseString);
+            parsedInt32.myState = TypeState.VALID;
 
-	    parsedInt32.myValue = System.Int16.Parse(parseString, formatProvider);
-	    parsedInt32.myState = TypeState.VALID;
+            return parsedInt32;
+        }
 
-	    return parsedInt32;
-	}
+        public static ShortType Parse(System.String parseString, System.Globalization.NumberStyles style) {
+            if (parseString == null) {
+                throw new InvalidArgumentException("parseString");
+            }
 
+            ShortType parsedInt32;
 
-	public static ShortType Parse(System.String parseString, System.Globalization.NumberStyles style, System.IFormatProvider formatProvider) {
-	    if (parseString == null) {
-		throw new InvalidArgumentException("parseString");
-	    }
+            parsedInt32.myValue = System.Int16.Parse(parseString, style);
+            parsedInt32.myState = TypeState.VALID;
 
-	    ShortType parsedInt32;
-	    parsedInt32.myValue = System.Int16.Parse(parseString, style, formatProvider);
-	    parsedInt32.myState = TypeState.VALID;
+            return parsedInt32;
+        }
 
-	    return parsedInt32;
-	}
+        public static ShortType Parse(System.String parseString, System.IFormatProvider formatProvider) {
+            if (parseString == null) {
+                throw new InvalidArgumentException("parseString");
+            }
 
-	#endregion
+            ShortType parsedInt32;
 
-	#region ToXX conversion methods
+            parsedInt32.myValue = System.Int16.Parse(parseString, formatProvider);
+            parsedInt32.myState = TypeState.VALID;
 
-	public byte ToByte(System.IFormatProvider formatProvider) {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
+            return parsedInt32;
+        }
 
-	    return System.Convert.ToByte(myValue);
-	}
+        public static ShortType Parse(System.String parseString, System.Globalization.NumberStyles style, System.IFormatProvider formatProvider) {
+            if (parseString == null) {
+                throw new InvalidArgumentException("parseString");
+            }
 
-	public short ToInt16(System.IFormatProvider formatProvider) {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
+            ShortType parsedInt32;
+            parsedInt32.myValue = System.Int16.Parse(parseString, style, formatProvider);
+            parsedInt32.myState = TypeState.VALID;
 
-	    return System.Convert.ToInt16(myValue);
-	}
+            return parsedInt32;
+        }
 
-	public int ToInt32(System.IFormatProvider formatProvider) {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
+        #endregion
 
-	    return System.Convert.ToInt32(myValue);
-	}
+        #region ToXX conversion methods
 
-	public long ToInt64(System.IFormatProvider formatProvider) {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
+        public byte ToByte(System.IFormatProvider formatProvider) {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
-	    return myValue;
-	}
+            return System.Convert.ToByte(myValue);
+        }
 
-	public float ToSingle(System.IFormatProvider formatProvider) {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
+        public short ToInt16(System.IFormatProvider formatProvider) {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
-	    return System.Convert.ToSingle(myValue);
-	}
+            return System.Convert.ToInt16(myValue);
+        }
 
-	public double ToDouble(System.IFormatProvider formatProvider) {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
+        public int ToInt32(System.IFormatProvider formatProvider) {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
-	    return System.Convert.ToDouble(myValue);
-	}
+            return System.Convert.ToInt32(myValue);
+        }
 
-	public decimal ToDecimal(System.IFormatProvider formatProvider) {
-	    if (!IsValid) {
-		throw new InvalidStateException(myState);
-	    }
+        public long ToInt64(System.IFormatProvider formatProvider) {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
-	    return System.Convert.ToDecimal(myValue);
-	}
-	#endregion
+            return myValue;
+        }
 
-	#region Cast operators
-	#region byte
-	public static explicit operator byte(ShortType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public float ToSingle(System.IFormatProvider formatProvider) {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
-	    return (byte) castFrom.myValue;
-	}
+            return System.Convert.ToSingle(myValue);
+        }
 
-	public static implicit operator ShortType(byte castFrom) {
-	    ShortType returnType = new ShortType(castFrom);
+        public double ToDouble(System.IFormatProvider formatProvider) {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
-	    return returnType;
-	}
-	#endregion
+            return System.Convert.ToDouble(myValue);
+        }
 
-	#region short
-	public static implicit operator short(ShortType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public decimal ToDecimal(System.IFormatProvider formatProvider) {
+            if (!IsValid) {
+                throw new InvalidStateException(myState);
+            }
 
-	    return (short) castFrom.myValue;
-	}
+            return System.Convert.ToDecimal(myValue);
+        }
+        #endregion
 
-	public static implicit operator ShortType(short castFrom) {
-	    ShortType returnType = new ShortType(castFrom);
+        #region Cast operators
+        #region byte
+        public static explicit operator byte(ShortType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
 
-	    return returnType;
-	}
-	#endregion
+            return (byte)castFrom.myValue;
+        }
 
-	#region int
-	public static implicit operator int(ShortType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public static implicit operator ShortType(byte castFrom) {
+            ShortType returnType = new ShortType(castFrom);
 
-	    return castFrom.myValue;
-	}
+            return returnType;
+        }
+        #endregion
 
-	public static explicit operator ShortType(int castFrom) {
-	    ShortType returnType = new ShortType(castFrom);
+        #region short
+        public static implicit operator short(ShortType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
 
-	    return returnType;
-	}
-	#endregion
+            return castFrom.myValue;
+        }
 
-	#region long
-	public static implicit operator long(ShortType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public static implicit operator ShortType(short castFrom) {
+            ShortType returnType = new ShortType(castFrom);
 
-	    return (long) castFrom.myValue;
-	}
+            return returnType;
+        }
+        #endregion
 
-	public static explicit operator ShortType(long castFrom) {
-	    ShortType returnType = new ShortType(castFrom);
+        #region int
+        public static implicit operator int(ShortType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
+
+            return castFrom.myValue;
+        }
 
-	    return returnType;
-	}
-	#endregion
+        public static explicit operator ShortType(int castFrom) {
+            ShortType returnType = new ShortType(castFrom);
+
+            return returnType;
+        }
+        #endregion
+
+        #region long
+        public static implicit operator long(ShortType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
+
+            return castFrom.myValue;
+        }
 
-	#region float
-	public static explicit operator float(ShortType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public static explicit operator ShortType(long castFrom) {
+            ShortType returnType = new ShortType(castFrom);
 
-	    return (float) castFrom.myValue;
-	}
+            return returnType;
+        }
+        #endregion
+
+        #region float
+        public static explicit operator float(ShortType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
+
+            return castFrom.myValue;
+        }
+
+        public static explicit operator ShortType(float castFrom) {
+            ShortType returnType = new ShortType(Convert.ToInt16(castFrom));
+
+            return returnType;
+        }
+        #endregion
+
+        #region double
+        public static explicit operator double(ShortType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
+
+            return castFrom.myValue;
+        }
+
+        public static explicit operator ShortType(double castFrom) {
+            ShortType returnType = new ShortType(Convert.ToInt16(castFrom));
+
+            return returnType;
+        }
+        #endregion
+
+        #region Decimal
+        public static explicit operator Decimal(ShortType castFrom) {
+            if (!castFrom.IsValid) {
+                throw new InvalidStateException(castFrom.myState);
+            }
+
+            return castFrom.myValue;
+        }
+
+        public static implicit operator ShortType(Decimal castFrom) {
+            ShortType returnType = new ShortType(Convert.ToInt16(castFrom));
+
+            return returnType;
+        }
+        #endregion
+        #endregion
+
+        #region Equality operators and methods
+        public static int Compare(ShortType leftHand, ShortType rightHand) {
+            if (leftHand.myState == TypeState.VALID && rightHand.myState == TypeState.VALID) {
+                if (leftHand.myValue < rightHand.myValue) {
+                    return -1;
+                }
+
+                if (leftHand.myValue == rightHand.myValue) {
+                    return 0;
+                }
+
+                if (leftHand.myValue > rightHand.myValue) {
+                    return 1;
+                }
+            }
+
+            if (leftHand.myState == TypeState.UNSET) {
+                if (rightHand.myState == TypeState.DEFAULT || rightHand.myState == TypeState.VALID) {
+                    return -1;
+                }
+
+                if (rightHand.myState == TypeState.UNSET) {
+                    return 0;
+                }
+            }
+
+            if (leftHand.myState == TypeState.DEFAULT) {
+                if (rightHand.myState == TypeState.DEFAULT) {
+                    return 0;
+                }
+
+                if (rightHand.myState == TypeState.UNSET) {
+                    return 1;
+                }
+
+                return -1;
+            }
+
+            if (leftHand.myState == TypeState.VALID) {
+                return 1;
+            }
+
+            //should this throw an exception?
+            return 0;
+        }
+
+        #region Equality operators
+        public static bool operator ==(ShortType leftHand, ShortType rightHand) {
+            return Compare(leftHand, rightHand) == 0;
+        }
+
+        public static bool operator !=(ShortType leftHand, ShortType rightHand) {
+            return Compare(leftHand, rightHand) != 0;
+        }
+
+        public static bool operator ==(ShortType leftHand, short rightHand) {
+            if (!leftHand.IsValid) {
+                return false;
+            }
+
+            return leftHand.myValue == rightHand;
+        }
+
+        public static bool operator !=(ShortType leftHand, short rightHand) {
+            if (!leftHand.IsValid) {
+                return false;
+            }
 
-	public static explicit operator ShortType(float castFrom) {
-	    ShortType returnType = new ShortType(Convert.ToInt16(castFrom));
+            return leftHand.myValue != rightHand;
+        }
+        #endregion
+        #endregion
+
+        #region < and > operators
+        public static bool operator <(ShortType leftHand, ShortType rightHand) {
+            return Compare(leftHand, rightHand) < 0;
+        }
+
+        public static bool operator >(ShortType leftHand, ShortType rightHand) {
+            return Compare(leftHand, rightHand) > 0;
+        }
 
-	    return returnType;
-	}
-	#endregion
+        public static bool operator <(ShortType leftHand, short rightHand) {
+            if (!leftHand.IsValid) {
+                return false;
+            }
 
-	#region double
-	public static explicit operator double(ShortType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+            return leftHand.myValue < rightHand;
+        }
 
-	    return (double) castFrom.myValue;
-	}
+        public static bool operator >(ShortType leftHand, short rightHand) {
+            if (!leftHand.IsValid) {
+                return false;
+            }
 
-	public static explicit operator ShortType(double castFrom) {
-	    ShortType returnType = new ShortType(Convert.ToInt16(castFrom));
+            return leftHand.myValue > rightHand;
+        }
+        #endregion
 
-	    return returnType;
-	}
-	#endregion
+        #region <= and >= operators
+        public static bool operator <=(ShortType leftHand, ShortType rightHand) {
+            return Compare(leftHand, rightHand) <= 0;
+        }
 
-	#region Decimal
-	public static explicit operator Decimal(ShortType castFrom) {
-	    if (!castFrom.IsValid) {
-		throw new InvalidStateException(castFrom.myState);
-	    }
+        public static bool operator >=(ShortType leftHand, ShortType rightHand) {
+            return Compare(leftHand, rightHand) >= 0;
+        }
 
-	    return (Decimal) castFrom.myValue;
-	}
+        public static bool operator <=(ShortType leftHand, short rightHand) {
+            if (!leftHand.IsValid) {
+                return false;
+            }
 
-	public static implicit operator ShortType(Decimal castFrom) {
-	    ShortType returnType = new ShortType(Convert.ToInt16(castFrom));
+            return leftHand.myValue <= rightHand;
+        }
 
-	    return returnType;
-	}
-	#endregion
-	#endregion
+        public static bool operator >=(ShortType leftHand, short rightHand) {
+            if (!leftHand.IsValid) {
+                return false;
+            }
 
-	#region Equality operators and methods
-	public static int Compare(ShortType leftHand, ShortType rightHand) {
-	    if (leftHand.myState == TypeState.VALID && rightHand.myState == TypeState.VALID) {
-		if (leftHand.myValue < rightHand.myValue) {
-		    return -1;
-		}
+            return leftHand.myValue >= rightHand;
+        }
+        #endregion
 
-		if (leftHand.myValue == rightHand.myValue) {
-		    return 0;
-		}
+        #region Addition operators and methods
+        public static ShortType Add(ShortType augend, ShortType addend) {
+            if (!augend.IsValid || !addend.IsValid) {
+                throw new InvalidStateException(augend.myState, addend.myState);
+            }
 
-		if (leftHand.myValue > rightHand.myValue) {
-		    return 1;
-		}
-	    }
+            ShortType result = new ShortType(augend.myValue + addend.myValue);
 
-	    if (leftHand.myState == TypeState.UNSET) {
-		if (rightHand.myState == TypeState.DEFAULT || rightHand.myState == TypeState.VALID) {
-		    return -1;
-		}
+            return result;
+        }
 
-		if (rightHand.myState == TypeState.UNSET) {
-		    return 0;
-		}
-	    }
-
-	    if (leftHand.myState == TypeState.DEFAULT) {
-		if (rightHand.myState == TypeState.DEFAULT) {
-		    return 0;
-		}
-
-		if (rightHand.myState == TypeState.UNSET) {
-		    return 1;
-		}
-
-		return -1;
-	    }
-
-	    if (leftHand.myState == TypeState.VALID) {
-		return 1;
-	    }
-
-	    //should this throw an exception?
-	    return 0;
-	}
-
-
-	#region Equality operators
-	public static bool operator == (ShortType leftHand, ShortType rightHand) {
-	    return Compare(leftHand, rightHand) == 0;
-	}
-
-	public static bool operator != (ShortType leftHand, ShortType rightHand) {
-	    return Compare(leftHand, rightHand) != 0;
-	}
+        public static ShortType operator +(ShortType augend, ShortType addend) {
+            if (!augend.IsValid || !addend.IsValid) {
+                throw new InvalidStateException(augend.myState, addend.myState);
+            }
 
-	public static bool operator == (ShortType leftHand, short rightHand) {
-	    if (!leftHand.IsValid) {
-		return false;
-	    }
+            ShortType result = new ShortType(augend.myValue + addend.myValue);
 
-	    return leftHand.myValue == rightHand;
-	}
+            return result;
+        }
 
-	public static bool operator != (ShortType leftHand, short rightHand) {
-	    if (!leftHand.IsValid) {
-		return false;
-	    }
+        public static ShortType operator +(ShortType augend, short addend) {
+            if (!augend.IsValid) {
+                throw new InvalidStateException(augend.myState);
+            }
 
-	    return leftHand.myValue != rightHand;
-	}
-	#endregion    
-	#endregion
+            ShortType result = new ShortType(augend.myValue + addend);
 
-	#region < and > operators
-	public static bool operator < (ShortType leftHand, ShortType rightHand) {
-	    return Compare(leftHand, rightHand) < 0;
-	}
+            return result;
+        }
 
-	public static bool operator > (ShortType leftHand, ShortType rightHand) {
-	    return Compare(leftHand, rightHand) > 0;
-	}
+        public static ShortType operator ++(ShortType augend) {
+            if (!augend.IsValid) {
+                throw new InvalidStateException(augend.myState);
+            }
 
-	public static bool operator < (ShortType leftHand, short rightHand) {
-	    if (!leftHand.IsValid) {
-		return false;
-	    }
+            ShortType result = new ShortType(augend.myValue + 1);
 
-	    return leftHand.myValue < rightHand;
-	}
+            return result;
+        }
 
-	public static bool operator > (ShortType leftHand, short rightHand) {
-	    if (!leftHand.IsValid) {
-		return false;
-	    }
+        //	public static ShortType operator ++(short augend) {
+        //	    ShortType result = new ShortType(augend + 1);
 
-	    return leftHand.myValue > rightHand;
-	}
-	#endregion    
+        //	    return result;
+        //	}
+        #endregion
 
-	#region <= and >= operators
-	public static bool operator <= (ShortType leftHand, ShortType rightHand) {
-	    return Compare(leftHand, rightHand) <= 0;
-	}
+        #region Subtraction operators and methods
+        public static ShortType operator -(ShortType minuend, ShortType subtrahend) {
+            if (!minuend.IsValid || !subtrahend.IsValid) {
+                throw new InvalidStateException(minuend.myState, subtrahend.myState);
+            }
 
-	public static bool operator >= (ShortType leftHand, ShortType rightHand) {
-	    return Compare(leftHand, rightHand) >= 0;
-	}
+            ShortType result = new ShortType(minuend.myValue - subtrahend.myValue);
 
-	public static bool operator <= (ShortType leftHand, short rightHand) {
-	    if (!leftHand.IsValid) {
-		return false;
-	    }
+            return result;
+        }
 
-	    return leftHand.myValue <= rightHand;
-	}
+        public static ShortType operator -(ShortType minuend, short subtrahend) {
+            if (!minuend.IsValid) {
+                throw new InvalidStateException(minuend.myState);
+            }
 
-	public static bool operator >= (ShortType leftHand, short rightHand) {
-	    if (!leftHand.IsValid) {
-		return false;
-	    }
+            ShortType result = new ShortType(minuend.myValue - subtrahend);
 
-	    return leftHand.myValue >= rightHand;
-	}
-	#endregion    
-	    
-	#region Addition operators and methods
-	public static ShortType Add(ShortType augend, ShortType addend) {
-	    if (!augend.IsValid || !addend.IsValid) {
-		throw new InvalidStateException(augend.myState, addend.myState);
-	    }
+            return result;
+        }
 
-	    ShortType result = new ShortType(augend.myValue + addend.myValue);
+        public static ShortType operator --(ShortType subtrahend) {
+            if (!subtrahend.IsValid) {
+                throw new InvalidStateException(subtrahend.myState);
+            }
 
-	    return result;
-	}
+            ShortType result = new ShortType(subtrahend.myValue - 1);
 
-	public static ShortType operator +(ShortType augend, ShortType addend) {
-	    if (!augend.IsValid || !addend.IsValid) {
-		throw new InvalidStateException(augend.myState, addend.myState);
-	    }
+            return result;
+        }
 
-	    ShortType result = new ShortType(augend.myValue + addend.myValue);
+        //	public static ShortType operator --(short subtrahend) {
+        //	    ShortType result = new ShortType(subtrahend - 1);
 
-	    return result;
-	}
+        //	    return result;
+        //	}
 
-	public static ShortType operator +(ShortType augend, short addend) {
-	    if (!augend.IsValid) {
-		throw new InvalidStateException(augend.myState);
-	    }
+        #endregion
 
-	    ShortType result = new ShortType(augend.myValue + addend);
+        #region Mutliplication operators and methods
+        public static ShortType Multiply(ShortType multiplier, ShortType multiplicand) {
+            if (!multiplier.IsValid || !multiplicand.IsValid) {
+                throw new InvalidStateException(multiplier.myState, multiplicand.myState);
+            }
 
-	    return result;
-	}
+            ShortType result = new ShortType(multiplier.myValue * multiplicand.myValue);
 
-	public static ShortType operator ++(ShortType augend) {
-	    if (!augend.IsValid) {
-		throw new InvalidStateException(augend.myState);
-	    }
+            return result;
+        }
 
-	    ShortType result = new ShortType(augend.myValue + 1);
+        public static ShortType operator *(ShortType multiplier, ShortType multiplicand) {
+            if (!multiplier.IsValid || !multiplicand.IsValid) {
+                throw new InvalidStateException(multiplier.myState, multiplicand.myState);
+            }
 
-	    return result;
-	}
+            ShortType result = new ShortType(multiplier.myValue * multiplicand.myValue);
 
-	//	public static ShortType operator ++(short augend) {
-	//	    ShortType result = new ShortType(augend + 1);
+            return result;
+        }
 
-	//	    return result;
-	//	}
-	#endregion
+        public static ShortType operator *(ShortType multiplier, short multiplicand) {
+            if (!multiplier.IsValid) {
+                throw new InvalidStateException(multiplier.myState);
+            }
 
-	#region Subtraction operators and methods
-	public static ShortType operator -(ShortType minuend, ShortType subtrahend) {
-	    if (!minuend.IsValid || !subtrahend.IsValid) {
-		throw new InvalidStateException(minuend.myState, subtrahend.myState);
-	    }
+            ShortType result = new ShortType(multiplier.myValue * multiplicand);
 
-	    ShortType result = new ShortType(minuend.myValue - subtrahend.myValue);
+            return result;
+        }
+        #endregion
 
-	    return result;
-	}
+        #region Division operators and methods
+        public static ShortType Divide(ShortType dividend, ShortType divisor) {
+            if (!dividend.IsValid || !divisor.IsValid) {
+                throw new InvalidStateException(dividend.myState, divisor.myState);
+            }
 
-	public static ShortType operator -(ShortType minuend, short subtrahend) {
-	    if (!minuend.IsValid) {
-		throw new InvalidStateException(minuend.myState);
-	    }
+            ShortType result = new ShortType(dividend.myValue / divisor.myValue);
 
-	    ShortType result = new ShortType(minuend.myValue - subtrahend);
+            return result;
+        }
 
-	    return result;
-	}
+        public static ShortType operator /(ShortType dividend, ShortType divisor) {
+            if (!dividend.IsValid || !divisor.IsValid) {
+                throw new InvalidStateException(dividend.myState, divisor.myState);
+            }
 
-	public static ShortType operator --(ShortType subtrahend) {
-	    if (!subtrahend.IsValid) {
-		throw new InvalidStateException(subtrahend.myState);
-	    }
+            ShortType result = new ShortType(dividend.myValue / divisor.myValue);
 
-	    ShortType result = new ShortType(subtrahend.myValue - 1);
+            return result;
+        }
 
-	    return result;
-	}
+        public static ShortType operator /(ShortType dividend, short divisor) {
+            if (!dividend.IsValid) {
+                throw new InvalidStateException(dividend.myState);
+            }
 
-	//	public static ShortType operator --(short subtrahend) {
-	//	    ShortType result = new ShortType(subtrahend - 1);
+            ShortType result = new ShortType(dividend.myValue / divisor);
 
-	//	    return result;
-	//	}
+            return result;
+        }
+        #endregion
 
-	#endregion
+        #region Modulus operators and methods
+        public static ShortType Remainder(ShortType dividend, ShortType divisor) {
+            if (!dividend.IsValid || !divisor.IsValid) {
+                throw new InvalidStateException(dividend.myState, divisor.myState);
+            }
 
-	#region Mutliplication operators and methods
-	public static ShortType Multiply(ShortType multiplier, ShortType multiplicand) {
-	    if (!multiplier.IsValid || !multiplicand.IsValid) {
-		throw new InvalidStateException(multiplier.myState, multiplicand.myState);
-	    }
+            ShortType result = new ShortType(dividend.myValue % divisor.myValue);
 
-	    ShortType result = new ShortType(multiplier.myValue * multiplicand.myValue);
+            return result;
+        }
 
-	    return result;
-	}
+        public static ShortType operator %(ShortType dividend, ShortType divisor) {
+            if (!dividend.IsValid || !divisor.IsValid) {
+                throw new InvalidStateException(dividend.myState, divisor.myState);
+            }
 
-	public static ShortType operator *(ShortType multiplier, ShortType multiplicand) {
-	    if (!multiplier.IsValid || !multiplicand.IsValid) {
-		throw new InvalidStateException(multiplier.myState, multiplicand.myState);
-	    }
+            ShortType result = new ShortType(dividend.myValue % divisor.myValue);
 
-	    ShortType result = new ShortType(multiplier.myValue * multiplicand.myValue);
+            return result;
+        }
 
-	    return result;
-	}
+        public static ShortType operator %(ShortType dividend, short divisor) {
+            if (!dividend.IsValid) {
+                throw new InvalidStateException(dividend.myState);
+            }
 
-	public static ShortType operator *(ShortType multiplier, short multiplicand) {
-	    if (!multiplier.IsValid) {
-		throw new InvalidStateException(multiplier.myState);
-	    }
+            ShortType result = new ShortType(dividend.myValue % divisor);
 
-	    ShortType result = new ShortType(multiplier.myValue * multiplicand);
+            return result;
+        }
+        #endregion
 
-	    return result;
-	}
-	#endregion
+        #region IComparable method
+        int IComparable.CompareTo(Object value) {
+            if (!(value is ShortType)) {
+                throw new InvalidTypeException("ShortType");
+            }
 
-	#region Division operators and methods
-	public static ShortType Divide(ShortType dividend, ShortType divisor) {
-	    if (!dividend.IsValid || !divisor.IsValid) {
-		throw new InvalidStateException(dividend.myState, divisor.myState);
-	    }
+            if (value == null) {
+                throw new InvalidArgumentException("value");
+            }
 
-	    ShortType result = new ShortType(dividend.myValue / divisor.myValue);
+            ShortType compareTo = (ShortType)value;
 
-	    return result;
-	}
+            return Compare(this, compareTo);
+        }
+        #endregion
 
-	public static ShortType operator /(ShortType dividend, ShortType divisor) {
-	    if (!dividend.IsValid || !divisor.IsValid) {
-		throw new InvalidStateException(dividend.myState, divisor.myState);
-	    }
+        #region Object support and other stuff
+        public override bool Equals(Object value) {
+            if (value is ShortType) {
+                return Compare(this, (ShortType)value) == 0;
+            }
 
-	    ShortType result = new ShortType(dividend.myValue / divisor.myValue);
+            return false;
+        }
 
-	    return result;
-	}
+        public static bool Equals(ShortType leftHand, ShortType rightHand) {
+            return Compare(leftHand, rightHand) == 0;
+        }
 
-	public static ShortType operator /(ShortType dividend, short divisor) {
-	    if (!dividend.IsValid) {
-		throw new InvalidStateException(dividend.myState);
-	    }
+        public override int GetHashCode() {
+            return myValue.GetHashCode();
+        }
 
-	    ShortType result = new ShortType(dividend.myValue / divisor);
-
-	    return result;
-	}
-	#endregion
-
-	#region Modulus operators and methods
-	public static ShortType Remainder(ShortType dividend, ShortType divisor) {
-	    if (!dividend.IsValid || !divisor.IsValid) {
-		throw new InvalidStateException(dividend.myState, divisor.myState);
-	    }
-
-	    ShortType result = new ShortType(dividend.myValue % divisor.myValue);
-
-	    return result;
-	}
-
-	public static ShortType operator %(ShortType dividend, ShortType divisor) {
-	    if (!dividend.IsValid || !divisor.IsValid) {
-		throw new InvalidStateException(dividend.myState, divisor.myState);
-	    }
-
-	    ShortType result = new ShortType(dividend.myValue % divisor.myValue);
-
-	    return result;
-	}
-
-	public static ShortType operator %(ShortType dividend, short divisor) {
-	    if (!dividend.IsValid) {
-		throw new InvalidStateException(dividend.myState);
-	    }
-
-	    ShortType result = new ShortType(dividend.myValue % divisor);
-
-	    return result;
-	}
-	#endregion
-
-	#region IComparable method
-	int IComparable.CompareTo(Object value) {
-	    if (!(value is ShortType)) {
-		throw new InvalidTypeException("ShortType");
-	    }
-
-	    if (value == null) {
-		throw new InvalidArgumentException("value");
-	    }
-
-	    ShortType compareTo = (ShortType) value;
-
-	    return Compare(this, compareTo);
-	}
-	#endregion
-
-	#region Object support and other stuff
-	public override bool Equals(Object value) {
-	    if (value is ShortType) {
-		return Compare(this, (ShortType) value) == 0;
-	    }
-
-	    return false;
-	}
-
-	public static bool Equals(ShortType leftHand, ShortType rightHand) {
-	    return Compare(leftHand, rightHand) == 0;
-	}
-
-	public override int GetHashCode() {
-	    return myValue.GetHashCode();
-	}
-	
-	public TypeCode GetTypeCode() {
-	    return TypeCode.Int16;
-	}
-	#endregion
+        public TypeCode GetTypeCode() {
+            return TypeCode.Int16;
+        }
+        #endregion
 
         [SecurityPermissionAttribute(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
         ShortType(SerializationInfo info, StreamingContext context) {

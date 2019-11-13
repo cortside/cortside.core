@@ -7,9 +7,9 @@ namespace Spring2.Core.Types {
     /// </summary>
     public interface IDataType {
 
-	Boolean IsDefault { get; }
-	Boolean IsUnset { get; }
-	Boolean IsValid { get; }
-    
+        Boolean IsDefault { get; }
+        Boolean IsUnset { get; }
+        Boolean IsValid { get; }
+
     }
 }
